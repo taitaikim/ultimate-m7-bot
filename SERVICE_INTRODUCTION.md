@@ -4,6 +4,8 @@
 ## 🌟 Service Overview
 **M7 Bot (Cloud V2)** is a state-of-the-art automated stock analysis service designed for the "Magnificent 7" and major US indices. It combines **macroeconomic analysis**, **technical indicators**, **news sentiment**, **options flow**, and **support/resistance levels** into a single, powerful decision-making engine.
 
+![M7 Bot Architecture](C:/Users/user/.gemini/antigravity/brain/d49acbc6-c0df-445c-95c2-62978f5e2242/service_architecture_1763647022240.png)
+
 Unlike simple alert bots, M7 Bot filters out noise using a rigorous **5-Layer Filtering System**, ensuring that only the highest-probability signals reach you.
 
 ---

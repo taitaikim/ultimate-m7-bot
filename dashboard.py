@@ -150,6 +150,23 @@ def get_filter_stats(df: pd.DataFrame) -> Dict[str, float]:
 
 
 # ============================================================================
+# ⚠️ LEGAL DISCLAIMER (법적 면책 조항) - MUST BE VISIBLE
+# ============================================================================
+DISCLAIMER_HTML = """
+<div style="background-color: #fff3cd; padding: 15px; border-radius: 5px; border-left: 5px solid #ffc107; margin-bottom: 20px;">
+    <h4 style="color: #856404; margin-top: 0;">⚠️ EDUCATIONAL TOOL ONLY - NOT INVESTMENT ADVICE</h4>
+    <ul style="color: #856404; font-size: 0.9em; margin-bottom: 0;">
+        <li><strong>Technical Patterns Only:</strong> This tool detects technical patterns, not investment recommendations.</li>
+        <li><strong>Past Performance ≠ Future Results:</strong> Historical data does not guarantee future profits.</li>
+        <li><strong>Your Responsibility:</strong> You are 100% responsible for your trading decisions.</li>
+        <hr style="border-color: #e0a800; margin: 10px 0;">
+        <li><strong>투자 유의사항:</strong> 본 서비스는 금융투자업 미등록 교육 도구이며, 매수/매도에 대한 추천이 아닙니다.</li>
+        <li><strong>책임의 한계:</strong> 모든 투자의 결과(손실 포함)는 <strong>사용자 본인</strong>에게 귀속됩니다.</li>
+    </ul>
+</div>
+"""
+
+# ============================================================================
 # MAIN DASHBOARD
 # ============================================================================
 def main() -> None:
