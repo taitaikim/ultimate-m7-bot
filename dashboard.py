@@ -1,6 +1,6 @@
 """
 M7 Bot - Streamlit Dashboard (V2.8 Ichimoku Cloud)
-Weekly Ichimoku Cloud Strategy
+Daily Ichimoku Cloud Strategy
 """
 
 import streamlit as st
@@ -73,13 +73,13 @@ def load_signals_data(limit: int = 100) -> pd.DataFrame:
         return pd.DataFrame()
 
 @st.cache_data(ttl=3600)
-def run_technical_backtest(ticker: str, period: str = "2y"):
+def run_technical_backtest(ticker: str, period: str = "1y"):
     """
-    과거 데이터 기반 기술적 백테스팅 (로직 v2.8: 일목균형표 전략)
+    과거 데이터 기반 기술적 백테스팅 (로직 v2.8: 일목균형표 전략 - 일봉)
     """
     try:
-        # 주봉 데이터로 변경 (interval='1wk')
-        df = yf.download(ticker, period=period, interval='1wk', progress=False, auto_adjust=True)
+        # 일봉 데이터
+        df = yf.download(ticker, period=period, progress=False, auto_adjust=True)
         
         if df.empty:
             return None, None, None
@@ -111,7 +111,7 @@ def run_technical_backtest(ticker: str, period: str = "2y"):
         # 포지션 보유 상태
         holding = False 
         
-        for i in range(52, len(df)):  # 52주 이후부터 계산
+        for i in range(52, len(df)):  # 52일 이후부터 계산
             price = df['Close'].iloc[i]
             tenkan = df['Tenkan_sen'].iloc[i]
             kijun = df['Kijun_sen'].iloc[i]
@@ -184,7 +184,7 @@ def plot_backtest_chart(ticker, df, buy_signals, sell_signals):
         ))
 
     fig.update_layout(
-        title=f"📈 {ticker} Ichimoku Cloud Strategy (Last 2 Years)",
+        title=f"📈 {ticker} Ichimoku Cloud Strategy (Last 1 Year - Daily)",
         xaxis_title="Date",
         yaxis_title="Price ($)",
         template="plotly_white",
@@ -268,7 +268,7 @@ def main() -> None:
     # --- TAB 2: 차트 백테스팅 ---
     with tab2:
         st.subheader("🔍 과거 차트 복기 (Visual Proof)")
-        st.info("💡 일목균형표 전략 (주봉, 2년): 구름 돌파 + 전환선/기준선 교차로 매매")
+        st.info("💡 일목균형표 전략 (일봉, 1년): 구름 돌파 + 전환선/기준선 교차로 매매")
         
         col_sel, col_blank = st.columns([1, 3])
         with col_sel:
