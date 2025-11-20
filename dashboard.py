@@ -1,6 +1,6 @@
 """
-M7 Bot - Streamlit Dashboard (V2.3 Trend Following)
-Enhanced UI/UX & Trend Following Backtest Logic
+M7 Bot - Streamlit Dashboard (V2.4 Strict RSI)
+Enhanced UI/UX & Strict RSI Thresholds
 """
 
 import streamlit as st
@@ -75,10 +75,10 @@ def load_signals_data(limit: int = 100) -> pd.DataFrame:
 @st.cache_data(ttl=3600)
 def run_technical_backtest(ticker: str, period: str = "6mo"):
     """
-    과거 데이터 기반 기술적 백테스팅 (로직 개선: 추세 추종)
+    과거 데이터 기반 기술적 백테스팅 (로직 v2.4: 엄격한 RSI 기준)
     """
     try:
-        # [수정] auto_adjust=True 추가 (주식 분할/배당 락 데이터 보정)
+        # auto_adjust=True로 데이터 보정
         df = yf.download(ticker, period=period, progress=False, auto_adjust=True)
         
         if df.empty:
@@ -101,25 +101,31 @@ def run_technical_backtest(ticker: str, period: str = "6mo"):
         buy_signals = []
         sell_signals = []
         
-        # 포지션 보유 상태 확인용 변수
+        # 포지션 보유 상태
         holding = False 
+        entry_price = None
         
         for i in range(20, len(df)):
             price = df['Close'].iloc[i]
             rsi = df['RSI'].iloc[i]
             ma20 = df['MA20'].iloc[i]
             
-            # 🟢 매수 로직: RSI가 과매도 구간(40) 아래일 때 (저점 매수)
-            if not holding and rsi < 40:
+            # 🟢 매수 로직: RSI < 30 (진짜 과매도 구간만, 더 엄격)
+            if not holding and rsi < 30:
                 buy_signals.append((df.index[i], price))
                 holding = True
+                entry_price = price
             
-            # 🔴 매도 로직: (수정됨) "추세 추종형 매도"
-            # 단순히 RSI가 높다고 파는 게 아니라, 가격이 20일 이동평균선 아래로 깨질 때 매도
-            # (상승세를 최대한 즐기다가 꺾일 때 파는 전략)
-            elif holding and price < ma20 and rsi > 50:
-                sell_signals.append((df.index[i], price))
-                holding = False
+            # 🔴 매도 로직 (두 가지 조건 중 하나라도 만족 시):
+            # 1) RSI > 75 (과매수 극단, 고점 근처)
+            # 2) 가격이 MA20 대비 10% 이상 하락 (확실한 하락 추세)
+            elif holding:
+                price_drop_from_ma20 = ((price - ma20) / ma20) * 100 if ma20 > 0 else 0
+                
+                if rsi > 75 or price_drop_from_ma20 < -10:
+                    sell_signals.append((df.index[i], price))
+                    holding = False
+                    entry_price = None
                 
         return df, buy_signals, sell_signals
         
@@ -241,7 +247,7 @@ def main() -> None:
     # --- TAB 2: 차트 백테스팅 ---
     with tab2:
         st.subheader("🔍 과거 차트 복기 (Visual Proof)")
-        st.info("💡 봇의 매매 로직(RSI + 추세)이 과거 차트에서 어떻게 작동했는지 시각화합니다.")
+        st.info("💡 봇의 매매 로직(엄격한 RSI 30/75)이 과거 차트에서 어떻게 작동했는지 시각화합니다.")
         
         col_sel, col_blank = st.columns([1, 3])
         with col_sel:
@@ -268,7 +274,7 @@ def main() -> None:
                         </div>
                     </div>
                     <p style='text-align: center; color: gray; font-size: 0.8em; margin-top: 10px;'>
-                        * 시각화용 시뮬레이션이며 실제 수익률과는 다를 수 있습니다.
+                        * RSI 30/75 기준, 더 엄격한 진입/탈출 조건 적용
                     </p>
                     """, unsafe_allow_html=True)
                 else:
