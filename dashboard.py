@@ -1,6 +1,6 @@
 """
-M7 Bot - Streamlit Dashboard (V2.4 Strict RSI)
-Enhanced UI/UX & Strict RSI Thresholds
+M7 Bot - Streamlit Dashboard (V2.5 Trend Following)
+Golden Cross/Death Cross Strategy
 """
 
 import streamlit as st
@@ -75,7 +75,7 @@ def load_signals_data(limit: int = 100) -> pd.DataFrame:
 @st.cache_data(ttl=3600)
 def run_technical_backtest(ticker: str, period: str = "6mo"):
     """
-    과거 데이터 기반 기술적 백테스팅 (로직 v2.4: 엄격한 RSI 기준)
+    과거 데이터 기반 기술적 백테스팅 (로직 v2.5: 추세추종 - 골든크로스/데드크로스)
     """
     try:
         # auto_adjust=True로 데이터 보정
@@ -89,7 +89,8 @@ def run_technical_backtest(ticker: str, period: str = "6mo"):
             df.columns = df.columns.get_level_values(0)
             
         # 지표 계산
-        df['MA20'] = df['Close'].rolling(window=20).mean()
+        df['MA5'] = df['Close'].rolling(window=5).mean()   # 단기 이평선
+        df['MA20'] = df['Close'].rolling(window=20).mean()  # 장기 이평선
         
         # RSI
         delta = df['Close'].diff()
@@ -103,29 +104,27 @@ def run_technical_backtest(ticker: str, period: str = "6mo"):
         
         # 포지션 보유 상태
         holding = False 
-        entry_price = None
         
-        for i in range(20, len(df)):
+        for i in range(20, len(df) - 1):  # -1을 해서 다음 날 확인 가능하게
+            prev_ma5 = df['MA5'].iloc[i-1]
+            prev_ma20 = df['MA20'].iloc[i-1]
+            curr_ma5 = df['MA5'].iloc[i]
+            curr_ma20 = df['MA20'].iloc[i]
+            
             price = df['Close'].iloc[i]
             rsi = df['RSI'].iloc[i]
-            ma20 = df['MA20'].iloc[i]
             
-            # 🟢 매수 로직: RSI < 30 (진짜 과매도 구간만, 더 엄격)
-            if not holding and rsi < 30:
+            # 🟢 매수 로직: 골든크로스 (단기 이평선이 장기 이평선을 상향 돌파) + RSI < 60
+            # RSI 조건을 추가해서 과매수 구간에서는 진입하지 않도록
+            if not holding and prev_ma5 <= prev_ma20 and curr_ma5 > curr_ma20 and rsi < 60:
                 buy_signals.append((df.index[i], price))
                 holding = True
-                entry_price = price
             
-            # 🔴 매도 로직 (두 가지 조건 중 하나라도 만족 시):
-            # 1) RSI > 75 (과매수 극단, 고점 근처)
-            # 2) 가격이 MA20 대비 10% 이상 하락 (확실한 하락 추세)
-            elif holding:
-                price_drop_from_ma20 = ((price - ma20) / ma20) * 100 if ma20 > 0 else 0
-                
-                if rsi > 75 or price_drop_from_ma20 < -10:
-                    sell_signals.append((df.index[i], price))
-                    holding = False
-                    entry_price = None
+            # 🔴 매도 로직: 데드크로스 (단기 이평선이 장기 이평선을 하향 돌파)
+            # 추세가 명확하게 꺾일 때 매도
+            elif holding and prev_ma5 >= prev_ma20 and curr_ma5 < curr_ma20:
+                sell_signals.append((df.index[i], price))
+                holding = False
                 
         return df, buy_signals, sell_signals
         
@@ -149,7 +148,7 @@ def plot_backtest_chart(ticker, df, buy_signals, sell_signals):
         buy_dates, buy_prices = zip(*buy_signals)
         fig.add_trace(go.Scatter(
             x=buy_dates, y=buy_prices,
-            mode='markers', name='Potential Buy',
+            mode='markers', name='Golden Cross (Buy)',
             marker=dict(symbol='triangle-up', size=12, color='green', line=dict(width=1, color='darkgreen'))
         ))
 
@@ -158,12 +157,12 @@ def plot_backtest_chart(ticker, df, buy_signals, sell_signals):
         sell_dates, sell_prices = zip(*sell_signals)
         fig.add_trace(go.Scatter(
             x=sell_dates, y=sell_prices,
-            mode='markers', name='Potential Sell',
+            mode='markers', name='Death Cross (Sell)',
             marker=dict(symbol='triangle-down', size=12, color='red', line=dict(width=1, color='darkred'))
         ))
 
     fig.update_layout(
-        title=f"📈 {ticker} Market Timing Simulation (Last 6 Months)",
+        title=f"📈 {ticker} Trend Following Strategy (Last 6 Months)",
         xaxis_title="Date",
         yaxis_title="Price ($)",
         template="plotly_white",
@@ -247,7 +246,7 @@ def main() -> None:
     # --- TAB 2: 차트 백테스팅 ---
     with tab2:
         st.subheader("🔍 과거 차트 복기 (Visual Proof)")
-        st.info("💡 봇의 매매 로직(엄격한 RSI 30/75)이 과거 차트에서 어떻게 작동했는지 시각화합니다.")
+        st.info("💡 골든크로스/데드크로스 기반 추세추종 전략: 단기선(5일)과 장기선(20일)의 교차점을 시각화합니다.")
         
         col_sel, col_blank = st.columns([1, 3])
         with col_sel:
@@ -267,14 +266,14 @@ def main() -> None:
                     st.markdown(f"""
                     <div style='display: flex; gap: 20px; justify-content: center; margin-top: 10px;'>
                         <div style='background:#e8f5e9; padding:15px 30px; border-radius:10px; border:1px solid #c8e6c9;'>
-                            <span style='font-size:1.1em; color:#2e7d32;'>🟢 매수 기회: <b>{len(buys)}회</b></span>
+                            <span style='font-size:1.1em; color:#2e7d32;'>🟢 골든크로스: <b>{len(buys)}회</b></span>
                         </div>
                         <div style='background:#ffebee; padding:15px 30px; border-radius:10px; border:1px solid #ffcdd2;'>
-                            <span style='font-size:1.1em; color:#c62828;'>🔴 매도 기회: <b>{len(sells)}회</b></span>
+                            <span style='font-size:1.1em; color:#c62828;'>🔴 데드크로스: <b>{len(sells)}회</b></span>
                         </div>
                     </div>
                     <p style='text-align: center; color: gray; font-size: 0.8em; margin-top: 10px;'>
-                        * RSI 30/75 기준, 더 엄격한 진입/탈출 조건 적용
+                        * 골든크로스(MA5↗MA20) 매수 / 데드크로스(MA5↘MA20) 매도 전략
                     </p>
                     """, unsafe_allow_html=True)
                 else:
