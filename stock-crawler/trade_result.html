@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테슬라(TSLA) 전략 비교 리포트</title>
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; margin: 20px; background-color: #f4f4f9; }
+        h1, h2 { color: #333; text-align: center; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 20px; background-color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: center; }
+        th { background-color: #4CAF50; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+        .summary-table th { background-color: #2196F3; }
+        .chart-container { text-align: center; margin: 30px 0; }
+        img { max-width: 100%; height: auto; border: 1px solid #ddd; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .winner-box { background-color: #fff3cd; border: 2px solid #ffc107; padding: 20px; text-align: center; border-radius: 10px; margin-bottom: 30px; }
+        .winner-title { font-size: 1.5em; font-weight: bold; color: #856404; }
+        .winner-text { font-size: 1.2em; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 테슬라(TSLA) 최종 전략 비교 리포트</h1>
+        
+        <div class="winner-box">
+            <div class="winner-title">🏆 우승 전략: RSI 전략</div>
+            <div class="winner-text">수익률 <strong>33.04%</strong>로 가장 높은 성과를 기록했습니다!</div>
+        </div>
+        
+        <h2>📊 전략 요약 (Summary)</h2>
+        <table class="dataframe summary-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>전략</th>
+      <th>수익률</th>
+      <th>최종 자본금</th>
+      <th>매매 횟수</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>단순 보유</td>
+      <td>19.86%</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>RSI 전략</td>
+      <td>33.04%</td>
+      <td>$13,303.55</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>스토캐스틱 스윙</td>
+      <td>25.67%</td>
+      <td>$12,567.03</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>VIX 공포 전략</td>
+      <td>13.73%</td>
+      <td>$11,372.77</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <h2>📈 수익률 비교 차트</h2>
+        <div class="chart-container">
+            <img src="strategy_comparison.png" alt="수익률 비교 차트">
+        </div>
+
+        <h2>📝 RSI 전략 매매 내역</h2>
+        <table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>날짜</th>
+      <th>유형</th>
+      <th>가격</th>
+      <th>수량</th>
+      <th>자본금</th>
+      <th>비고</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2025-08-21</td>
+      <td>매수</td>
+      <td>320.109985</td>
+      <td>31.239263</td>
+      <td>0.000000</td>
+      <td>RSI 전략</td>
+    </tr>
+    <tr>
+      <td>2025-09-17</td>
+      <td>매도</td>
+      <td>425.859985</td>
+      <td>0.000000</td>
+      <td>13303.552055</td>
+      <td>RSI 전략</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <h2>📝 스토캐스틱 스윙 전략 매매 내역</h2>
+        <table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>날짜</th>
+      <th>유형</th>
+      <th>가격</th>
+      <th>수량</th>
+      <th>자본금</th>
+      <th>비고</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2024-11-20</td>
+      <td>매수</td>
+      <td>342.029999</td>
+      <td>29.237202</td>
+      <td>0.000000</td>
+      <td>스토캐스틱 스윙</td>
+    </tr>
+    <tr>
+      <td>2025-10-03</td>
+      <td>매도</td>
+      <td>429.829987</td>
+      <td>0.000000</td>
+      <td>12567.025937</td>
+      <td>스토캐스틱 스윙</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <h2>📝 VIX 공포 전략 매매 내역</h2>
+        <table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>날짜</th>
+      <th>유형</th>
+      <th>가격</th>
+      <th>수량</th>
+      <th>자본금</th>
+      <th>비고</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2025-02-07</td>
+      <td>매수</td>
+      <td>361.619995</td>
+      <td>27.653338</td>
+      <td>0.000000</td>
+      <td>VIX: 16.54</td>
+    </tr>
+    <tr>
+      <td>2025-05-09</td>
+      <td>매도</td>
+      <td>298.260010</td>
+      <td>0.000000</td>
+      <td>8247.884901</td>
+      <td>RSI: 80.11</td>
+    </tr>
+    <tr>
+      <td>2025-06-05</td>
+      <td>매수</td>
+      <td>284.700012</td>
+      <td>28.970441</td>
+      <td>0.000000</td>
+      <td>VIX: 18.48</td>
+    </tr>
+    <tr>
+      <td>2025-09-12</td>
+      <td>매도</td>
+      <td>395.940002</td>
+      <td>0.000000</td>
+      <td>11470.556473</td>
+      <td>RSI: 75.56</td>
+    </tr>
+    <tr>
+      <td>2025-10-10</td>
+      <td>매수</td>
+      <td>413.489990</td>
+      <td>27.740832</td>
+      <td>0.000000</td>
+      <td>VIX: 21.66</td>
+    </tr>
+  </tbody>
+</table>
+        
+        <p style="text-align: center; color: #666;">생성 시간: 2025-11-20 01:04:00</p>
+    </div>
+</body>
+</html>

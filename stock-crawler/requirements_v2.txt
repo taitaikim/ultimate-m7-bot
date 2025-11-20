@@ -1,0 +1,13 @@
+# Ultimate M7 V2 Bot - 필수 라이브러리
+
+# 기존 라이브러리
+yfinance>=0.2.28
+pandas>=2.0.0
+vaderSentiment>=3.3.2
+python-telegram-bot>=20.0
+
+# V2 추가 라이브러리 (고급 기술적 분석)
+scipy>=1.11.0          # 지지선/저항선 탐지 (find_peaks)
+plotly>=5.17.0         # 인터랙티브 차트 생성
+kaleido>=0.2.1         # Plotly 차트 이미지 변환 (선택사항)
+numpy>=1.24.0          # 수치 계산 (pandas 의존성)

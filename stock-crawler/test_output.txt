@@ -1,0 +1,20 @@
+﻿======================================================================
+python : Traceback (most recent call last):
+위치 줄:1 문자:1
++ python ultimate_m7_bot.py 2>&1 | Out-File -Fi
+lePath test_output.txt - ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (T 
+   raceback (most recent call last)::String)   
+  [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandErr 
+   or
+ 
+  File "C:\Users\user\Desktop\Developement\stoc
+k-crawler\ultimate_m7_bot.py", line 388, in <mo
+dule>
+    print("\U0001f680 Ultimate M7 Bot - 5중 필터 시
+스템")
+UnicodeEncodeError: 'cp949' codec can't encode 
+character '\U0001f680' in position 0: illegal m
+ultibyte sequence

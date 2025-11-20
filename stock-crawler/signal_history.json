@@ -1,0 +1,103 @@
+{
+  "signals": [
+    {
+      "date": "2025-11-20",
+      "time": "20:21:15",
+      "ticker": "NVDA",
+      "signal": "관망 (Hold)",
+      "entry_price": 186.52000427246094,
+      "filters": {
+        "market": "pass",
+        "chart": "fail",
+        "news": "pass",
+        "options": "pass",
+        "support": "pass"
+      }
+    },
+    {
+      "date": "2025-11-20",
+      "time": "20:21:15",
+      "ticker": "TSLA",
+      "signal": "관망 (Hold)",
+      "entry_price": 403.989990234375,
+      "filters": {
+        "market": "pass",
+        "chart": "fail",
+        "news": "pass",
+        "options": "pass",
+        "support": "pass"
+      }
+    },
+    {
+      "date": "2025-11-20",
+      "time": "20:21:15",
+      "ticker": "META",
+      "signal": "관망 (Hold)",
+      "entry_price": 590.3200073242188,
+      "filters": {
+        "market": "pass",
+        "chart": "fail",
+        "news": "pass",
+        "options": "pass",
+        "support": "pass"
+      }
+    },
+    {
+      "date": "2025-11-20",
+      "time": "20:21:15",
+      "ticker": "AMZN",
+      "signal": "관망 (Hold)",
+      "entry_price": 222.69000244140625,
+      "filters": {
+        "market": "pass",
+        "chart": "fail",
+        "news": "pass",
+        "options": "pass",
+        "support": "pass"
+      }
+    },
+    {
+      "date": "2025-11-20",
+      "time": "20:21:15",
+      "ticker": "GOOGL",
+      "signal": "관망 (Hold)",
+      "entry_price": 292.80999755859375,
+      "filters": {
+        "market": "pass",
+        "chart": "fail",
+        "news": "pass",
+        "options": "pass",
+        "support": "pass"
+      }
+    },
+    {
+      "date": "2025-11-20",
+      "time": "20:21:15",
+      "ticker": "AAPL",
+      "signal": "관망 (Hold)",
+      "entry_price": 268.55999755859375,
+      "filters": {
+        "market": "pass",
+        "chart": "fail",
+        "news": "pass",
+        "options": "pass",
+        "support": "pass"
+      }
+    },
+    {
+      "date": "2025-11-20",
+      "time": "20:21:16",
+      "ticker": "MSFT",
+      "signal": "🚀 강력 매수 (STRONG BUY)",
+      "entry_price": 487.1199951171875,
+      "filters": {
+        "market": "pass",
+        "chart": "pass",
+        "news": "pass",
+        "options": "pass",
+        "support": "pass"
+      }
+    }
+  ],
+  "performance": {}
+}

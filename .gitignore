@@ -1,0 +1,7 @@
+.env
+__pycache__/
+*.spec
+dist/
+build/
+m7_bot_env/
+.venv/

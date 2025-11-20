@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의 테슬라(TSLA) 리포트</title>
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; margin: 0; padding: 20px; background-color: #f0f2f5; }
+        .container { max-width: 800px; margin: 0 auto; background-color: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #333; margin-bottom: 10px; }
+        .date { text-align: center; color: #666; margin-bottom: 30px; font-size: 1.1em; }
+        
+        .signal-box { 
+            background-color: #f1c40f; 
+            color: white; 
+            padding: 30px; 
+            text-align: center; 
+            border-radius: 10px; 
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .signal-title { font-size: 1.5em; margin-bottom: 10px; opacity: 0.9; }
+        .signal-action { font-size: 3em; font-weight: bold; }
+        .signal-desc { font-size: 1.2em; margin-top: 10px; }
+
+        .summary-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+        .summary-table th, .summary-table td { padding: 15px; border-bottom: 1px solid #eee; text-align: center; }
+        .summary-table th { background-color: #f8f9fa; color: #555; }
+        
+        .chart-container { text-align: center; margin-bottom: 30px; }
+        img { max-width: 100%; border-radius: 10px; border: 1px solid #eee; }
+
+        .warning-box { 
+            border: 2px solid #e74c3c; 
+            background-color: #fdecea; 
+            color: #c0392b; 
+            padding: 15px; 
+            text-align: center; 
+            border-radius: 8px; 
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 오늘의 테슬라(TSLA) AI 리포트</h1>
+        <div class="date">2025년 11월 19일 기준</div>
+
+        <div class="signal-box">
+            <div class="signal-title">오늘의 행동</div>
+            <div class="signal-action">관망 (Hold)</div>
+            <div class="signal-desc">특이 사항 없음</div>
+        </div>
+
+        <table class="summary-table">
+            <thead>
+                <tr>
+                    <th>지표</th>
+                    <th>값</th>
+                    <th>상태</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>TSLA 현재가</td>
+                    <td>$406.36</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>TSLA RSI(14)</td>
+                    <td>40.70</td>
+                    <td>중립</td>
+                </tr>
+                <tr>
+                    <td>TSLA 추세 (MA20 vs MA60)</td>
+                    <td>골든크로스 (상승)</td>
+                    <td>MA20: $437.11</td>
+                </tr>
+                <tr>
+                    <td>QQQ 시장 필터 (120일선)</td>
+                    <td>안전 (Safe)</td>
+                    <td>현재: $598.56 / 120일선: $577.88</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="chart-container">
+            <img src="bot_chart.png" alt="테슬라 차트">
+        </div>
+
+        <div class="warning-box">
+            ⚠️ 손절 원칙: 진입가 대비 -7% 하락 시 무조건 손절하세요!
+        </div>
+    </div>
+</body>
+</html>

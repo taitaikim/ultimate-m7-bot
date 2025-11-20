@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M7 봇 종합 상황판</title>
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; margin: 0; padding: 20px; background-color: #f4f4f9; }
+        .container { max-width: 1000px; margin: 0 auto; background-color: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #333; }
+        .date { text-align: center; color: #666; margin-bottom: 20px; }
+        
+        .market-box { text-align: center; padding: 15px; background-color: #eee; border-radius: 10px; margin-bottom: 20px; font-weight: bold; }
+        
+        .alert-box { background-color: #ffebee; color: #c62828; padding: 15px; text-align: center; border: 2px solid #ef5350; border-radius: 10px; margin-bottom: 20px; font-weight: bold; animation: blink 2s infinite; }
+        
+        table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+        th, td { padding: 12px; border-bottom: 1px solid #ddd; text-align: center; }
+        th { background-color: #f8f9fa; color: #333; }
+        
+        .group-A { color: #e91e63; font-weight: bold; }
+        .group-B { color: #2196f3; font-weight: bold; }
+        .group-C { color: #4caf50; font-weight: bold; }
+        
+        .checklist-box { border: 2px dashed #aaa; padding: 20px; border-radius: 10px; background-color: #fff9c4; }
+        .checklist-title { font-weight: bold; margin-bottom: 10px; font-size: 1.1em; }
+        
+        @keyframes blink { 50% { opacity: 0.5; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 M7 봇 종합 상황판</h1>
+        <div class="date">2025년 11월 20일 기준</div>
+        
+        <div class="market-box" style="color: green">
+            시장 상태 (QQQ): 안전 (Safe) <br>
+            (현재가: $597.45 / 120일선: $577.87)
+        </div>
+        
+        
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>그룹</th>
+                    <th>종목명</th>
+                    <th>현재가</th>
+                    <th>RSI</th>
+                    <th>기준 (매수/매도)</th>
+                    <th>신호</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+    <tr>
+        <td class="group-A">A</td>
+        <td style="font-weight:bold;">NVDA</td>
+        <td>$184.38</td>
+        <td style="color: black">35.35</td>
+        <td>25 / 65</td>
+        <td style="color: black; font-weight: bold;">관망 (Hold)</td>
+    </tr>
+    
+    <tr>
+        <td class="group-A">A</td>
+        <td style="font-weight:bold;">TSLA</td>
+        <td>$402.88</td>
+        <td style="color: black">39.54</td>
+        <td>25 / 65</td>
+        <td style="color: black; font-weight: bold;">관망 (Hold)</td>
+    </tr>
+    
+    <tr>
+        <td class="group-B">B</td>
+        <td style="font-weight:bold;">META</td>
+        <td>$583.85</td>
+        <td style="color: blue">17.54</td>
+        <td>30 / 70</td>
+        <td style="color: black; font-weight: bold;">관망 (Hold)</td>
+    </tr>
+    
+    <tr>
+        <td class="group-B">B</td>
+        <td style="font-weight:bold;">AMZN</td>
+        <td>$221.56</td>
+        <td style="color: black">49.16</td>
+        <td>30 / 70</td>
+        <td style="color: black; font-weight: bold;">관망 (Hold)</td>
+    </tr>
+    
+    <tr>
+        <td class="group-B">B</td>
+        <td style="font-weight:bold;">GOOGL</td>
+        <td>$294.15</td>
+        <td style="color: black">59.22</td>
+        <td>30 / 70</td>
+        <td style="color: black; font-weight: bold;">관망 (Hold)</td>
+    </tr>
+    
+    <tr>
+        <td class="group-C">C</td>
+        <td style="font-weight:bold;">AAPL</td>
+        <td>$270.23</td>
+        <td style="color: black">47.40</td>
+        <td>35 / 75</td>
+        <td style="color: black; font-weight: bold;">관망 (Hold)</td>
+    </tr>
+    
+    <tr>
+        <td class="group-C">C</td>
+        <td style="font-weight:bold;">MSFT</td>
+        <td>$487.24</td>
+        <td style="color: blue">26.20</td>
+        <td>35 / 75</td>
+        <td style="color: green; font-weight: bold;">매수 (BUY)</td>
+    </tr>
+    
+            </tbody>
+        </table>
+        
+        <div class="checklist-box">
+            <div class="checklist-title">✅ [운영 원칙 체크리스트]</div>
+            <ul style="margin: 0; padding-left: 20px;">
+                <li><strong>자금 배분:</strong> 주식 70% : 현금 30% 비중을 항상 유지하세요.</li>
+                <li><strong>손절 규칙:</strong> 개별 종목 -10% 손실 시 절반 매도, -15% 손실 시 전량 매도하세요.</li>
+                <li><strong>분할 매수:</strong> 한 번에 사지 말고, 3번에 나누어 진입하세요.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
