@@ -1,6 +1,6 @@
 """
-M7 Bot - Streamlit Dashboard (V2.8 Ichimoku Cloud)
-Daily Ichimoku Cloud Strategy
+M7 Bot - Streamlit Dashboard (V2.9 Ichimoku + Volume)
+Daily Ichimoku Cloud + Volume Analysis Strategy
 """
 
 import streamlit as st
@@ -75,7 +75,7 @@ def load_signals_data(limit: int = 100) -> pd.DataFrame:
 @st.cache_data(ttl=3600)
 def run_technical_backtest(ticker: str, period: str = "1y"):
     """
-    과거 데이터 기반 기술적 백테스팅 (로직 v2.8: 일목균형표 전략 - 일봉)
+    과거 데이터 기반 기술적 백테스팅 (로직 v2.9: 일목균형표 + 거래량 분석)
     """
     try:
         # 일봉 데이터
@@ -105,6 +105,9 @@ def run_technical_backtest(ticker: str, period: str = "1y"):
         low_52 = df['Low'].rolling(window=52).min()
         df['Senkou_span_B'] = ((high_52 + low_52) / 2).shift(26)
         
+        # 거래량 분석 추가
+        df['Volume_MA20'] = df['Volume'].rolling(window=20).mean()  # 20일 거래량 이동평균
+        
         buy_signals = []
         sell_signals = []
         
@@ -117,6 +120,8 @@ def run_technical_backtest(ticker: str, period: str = "1y"):
             kijun = df['Kijun_sen'].iloc[i]
             senkou_a = df['Senkou_span_A'].iloc[i]
             senkou_b = df['Senkou_span_B'].iloc[i]
+            volume = df['Volume'].iloc[i]
+            volume_ma = df['Volume_MA20'].iloc[i]
             
             # 구름 상단/하단
             cloud_top = max(senkou_a, senkou_b)
@@ -125,19 +130,21 @@ def run_technical_backtest(ticker: str, period: str = "1y"):
             # 🟢 매수 로직: 
             # 1) 가격이 구름 위에 있음
             # 2) 전환선이 기준선 위에 있음 (골든크로스)
+            # 3) 거래량이 평균 이상 (신호 강도 확인)
             if not holding and i > 0:
                 prev_tenkan = df['Tenkan_sen'].iloc[i-1]
                 prev_kijun = df['Kijun_sen'].iloc[i-1]
                 
-                # 전환선이 기준선을 상향 돌파 + 가격이 구름 위
+                # 전환선이 기준선을 상향 돌파 + 가격이 구름 위 + 거래량 평균 이상
                 if (prev_tenkan <= prev_kijun and tenkan > kijun and 
-                    price > cloud_top):
+                    price > cloud_top and volume > volume_ma):
                     buy_signals.append((df.index[i], price))
                     holding = True
             
             # 🔴 매도 로직:
             # 1) 가격이 구름 아래로 떨어짐 OR
             # 2) 전환선이 기준선 아래로 교차 (데드크로스)
+            # 거래량 조건 없음 (손실 방지 우선)
             elif holding:
                 prev_tenkan = df['Tenkan_sen'].iloc[i-1]
                 prev_kijun = df['Kijun_sen'].iloc[i-1]
@@ -268,7 +275,7 @@ def main() -> None:
     # --- TAB 2: 차트 백테스팅 ---
     with tab2:
         st.subheader("🔍 과거 차트 복기 (Visual Proof)")
-        st.info("💡 일목균형표 전략 (일봉, 1년): 구름 돌파 + 전환선/기준선 교차로 매매")
+        st.info("💡 일목균형표 + 거래량 전략 (일봉, 1년): 구름 돌파 + TK교차 + 거래량 평균 이상")
         
         col_sel, col_blank = st.columns([1, 3])
         with col_sel:
@@ -295,7 +302,7 @@ def main() -> None:
                         </div>
                     </div>
                     <p style='text-align: center; color: gray; font-size: 0.8em; margin-top: 10px;'>
-                        * 일목균형표: 전환선/기준선 교차 + 구름 돌파 신호
+                        * 일목균형표 + 거래량: TK교차 + 구름 돌파 + 거래량 평균 이상
                     </p>
                     """, unsafe_allow_html=True)
                 else:
