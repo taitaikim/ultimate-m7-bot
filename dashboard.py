@@ -285,7 +285,7 @@ def main() -> None:
         if selected_ticker:
             # 계좌 크기 입력
             account_size = st.number_input(
-                "💰 계좌 크기 (USD)", 
+                "💰 전체 계좌 크기 (USD)", 
                 min_value=10000, 
                 max_value=10000000, 
                 value=100000, 
@@ -383,10 +383,11 @@ def main() -> None:
                                         <div style='font-size:1.3em; font-weight:bold; color:#28a745;'>{pos['position_pct']:.1f}%</div>
                                     </div>
                                 </div>
-                                <div style='margin-top:15px; padding:10px; background:white; border-radius:5px;'>
-                                    <div style='display:flex; justify-content:space-between; align-items:center;'>
-                                        <div style='color:#666;'>💡 추천 매수량:</div>
-                                        <div>
+                               <div style='background:linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding:20px; border-radius:10px; text-align:center; margin-top:15px;'>
+    <div style='color:rgba(255,255,255,0.9); font-size:0.9em; margin-bottom:8px; font-weight:500;'>💡 추천 매수량</div>
+    <div style='color:white; font-size:2em; font-weight:bold; margin-bottom:5px;'>{pos['shares']:,}주</div>
+    <div style='color:rgba(255,255,255,0.85); font-size:1.1em;'>≈ ${pos['position_value']:,.0f}</div>
+</div>
                                             <span style='font-size:1.2em; font-weight:bold; color:#007bff;'>{pos['shares']:,}주</span>
                                             <span style='color:#666; margin-left:10px;'>(≈ ${pos['position_value']:,.0f})</span>
                                         </div>
