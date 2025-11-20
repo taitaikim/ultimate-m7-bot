@@ -1,0 +1,41 @@
+name: Ultimate M7 Bot (Daily Run)
+
+# 실행 조건: 매일 주식 시장 개장 전/후 또는 수동 실행
+on:
+  schedule:
+    # UTC 14:30 = 한국 시간 23:30 (미국 서머타임 기준 장 시작 1시간 전)
+    # 월~금요일에만 실행
+    - cron: '30 14 * * 1-5'
+  workflow_dispatch: # 깃허브 웹에서 버튼 눌러 수동 실행 가능
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # 1. 코드 내려받기
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # 2. 파이썬 환경 설정
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    # 3. 필수 라이브러리 설치
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    # 4. 봇 실행 (메인 로직)
+    - name: Run M7 Bot Logic
+      env:
+        # 등록한 비밀 변수들을 환경 변수로 주입
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      run: |
+        python main.py
