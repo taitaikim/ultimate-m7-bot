@@ -1,3 +1,16 @@
+"""
+M7 Bot - Streamlit Dashboard (V3.0 Turtle Trading)
+Turtle Trading Breakout Strategy (Donchian Channel)
+"""
+
+import streamlit as st
+import pandas as pd
+import yfinance as yf
+import plotly.graph_objects as go
+from datetime import datetime, timedelta
+from typing import Dict, List, Optional, Any
+import os
+from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
@@ -98,7 +111,7 @@ def run_technical_backtest(ticker: str, period: str = "1y"):
                     holding = True
                     entry_price = price
             
-            # � 손절 로직: 10일 최저가 이탈
+            # 🔴 손절 로직: 10일 최저가 이탈
             elif holding:
                 if price < low_10:
                     sell_signals.append((df.index[i], price))
