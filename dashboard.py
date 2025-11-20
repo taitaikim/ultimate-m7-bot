@@ -1,11 +1,11 @@
 """
-M7 Bot - Streamlit Dashboard (V2.9 Ichimoku + Volume)
-Daily Ichimoku Cloud + Volume Analysis Strategy
+M7 Bot - Streamlit Dashboard (V3.0 Turtle Trading)
+Turtle Trading Breakout Strategy (Donchian Channel)
 """
 
 import streamlit as st
 import pandas as pd
-import yfinance as yf
+import yf<br/>inance as yf
 import plotly.graph_objects as go
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Any
@@ -75,7 +75,7 @@ def load_signals_data(limit: int = 100) -> pd.DataFrame:
 @st.cache_data(ttl=3600)
 def run_technical_backtest(ticker: str, period: str = "1y"):
     """
-    과거 데이터 기반 기술적 백테스팅 (로직 v2.9: 일목균형표 + 거래량 분석)
+    과거 데이터 기반 기술적 백테스팅 (로직 v3.0: 터틀 트레이딩 브레이크아웃)
     """
     try:
         # 일봉 데이터
@@ -88,72 +88,35 @@ def run_technical_backtest(ticker: str, period: str = "1y"):
         if isinstance(df.columns, pd.MultiIndex):
             df.columns = df.columns.get_level_values(0)
             
-        # 일목균형표 지표 계산
-        high_9 = df['High'].rolling(window=9).max()
-        low_9 = df['Low'].rolling(window=9).min()
-        df['Tenkan_sen'] = (high_9 + low_9) / 2  # 전환선
-        
-        high_26 = df['High'].rolling(window=26).max()
-        low_26 = df['Low'].rolling(window=26).min()
-        df['Kijun_sen'] = (high_26 + low_26) / 2  # 기준선
-        
-        # 선행스팬 A (26일 선행)
-        df['Senkou_span_A'] = ((df['Tenkan_sen'] + df['Kijun_sen']) / 2).shift(26)
-        
-        # 선행스팬 B (26일 선행)
-        high_52 = df['High'].rolling(window=52).max()
-        low_52 = df['Low'].rolling(window=52).min()
-        df['Senkou_span_B'] = ((high_52 + low_52) / 2).shift(26)
-        
-        # 거래량 분석 추가
-        df['Volume_MA20'] = df['Volume'].rolling(window=20).mean()  # 20일 거래량 이동평균
+        # 터틀 트레이딩 지표: 동키안 채널 (Donchian Channel)
+        df['High_20'] = df['High'].rolling(window=20).max()  # 20일 최고가
+        df['Low_10'] = df['Low'].rolling(window=10).min()    # 10일 최저가
         
         buy_signals = []
         sell_signals = []
         
         # 포지션 보유 상태
         holding = False 
+        entry_price = None
         
-        for i in range(52, len(df)):  # 52일 이후부터 계산
+        for i in range(20, len(df)):  # 20일 이후부터 계산
             price = df['Close'].iloc[i]
-            tenkan = df['Tenkan_sen'].iloc[i]
-            kijun = df['Kijun_sen'].iloc[i]
-            senkou_a = df['Senkou_span_A'].iloc[i]
-            senkou_b = df['Senkou_span_B'].iloc[i]
-            volume = df['Volume'].iloc[i]
-            volume_ma = df['Volume_MA20'].iloc[i]
+            high_20 = df['High_20'].iloc[i-1]  # 전일까지의 20일 최고가
+            low_10 = df['Low_10'].iloc[i-1]    # 전일까지의 10일 최저가
             
-            # 구름 상단/하단
-            cloud_top = max(senkou_a, senkou_b)
-            cloud_bottom = min(senkou_a, senkou_b)
-            
-            # 🟢 매수 로직: 
-            # 1) 가격이 구름 위에 있음
-            # 2) 전환선이 기준선 위에 있음 (골든크로스)
-            # 3) 거래량이 평균 이상 (신호 강도 확인)
-            if not holding and i > 0:
-                prev_tenkan = df['Tenkan_sen'].iloc[i-1]
-                prev_kijun = df['Kijun_sen'].iloc[i-1]
-                
-                # 전환선이 기준선을 상향 돌파 + 가격이 구름 위 + 거래량 평균 이상
-                if (prev_tenkan <= prev_kijun and tenkan > kijun and 
-                    price > cloud_top and volume > volume_ma):
+            # 🟢 매수 로직: 20일 최고가 돌파 (Breakout)
+            if not holding:
+                if price > high_20:
                     buy_signals.append((df.index[i], price))
                     holding = True
+                    entry_price = price
             
-            # 🔴 매도 로직:
-            # 1) 가격이 구름 아래로 떨어짐 OR
-            # 2) 전환선이 기준선 아래로 교차 (데드크로스)
-            # 거래량 조건 없음 (손실 방지 우선)
+            # � 손절 로직: 10일 최저가 이탈
             elif holding:
-                prev_tenkan = df['Tenkan_sen'].iloc[i-1]
-                prev_kijun = df['Kijun_sen'].iloc[i-1]
-                
-                # 가격이 구름 아래 또는 데드크로스
-                if (price < cloud_bottom or 
-                    (prev_tenkan >= prev_kijun and tenkan < kijun)):
+                if price < low_10:
                     sell_signals.append((df.index[i], price))
                     holding = False
+                    entry_price = None
                 
         return df, buy_signals, sell_signals
         
@@ -177,7 +140,7 @@ def plot_backtest_chart(ticker, df, buy_signals, sell_signals):
         buy_dates, buy_prices = zip(*buy_signals)
         fig.add_trace(go.Scatter(
             x=buy_dates, y=buy_prices,
-            mode='markers', name='Ichimoku Buy Signal',
+            mode='markers', name='Turtle Breakout Buy',
             marker=dict(symbol='triangle-up', size=12, color='green', line=dict(width=1, color='darkgreen'))
         ))
 
@@ -186,12 +149,12 @@ def plot_backtest_chart(ticker, df, buy_signals, sell_signals):
         sell_dates, sell_prices = zip(*sell_signals)
         fig.add_trace(go.Scatter(
             x=sell_dates, y=sell_prices,
-            mode='markers', name='Ichimoku Sell Signal',
+            mode='markers', name='Turtle Stop Loss',
             marker=dict(symbol='triangle-down', size=12, color='red', line=dict(width=1, color='darkred'))
         ))
 
     fig.update_layout(
-        title=f"📈 {ticker} Ichimoku Cloud Strategy (Last 1 Year - Daily)",
+        title=f"📈 {ticker} Turtle Trading Strategy (Last 1 Year)",
         xaxis_title="Date",
         yaxis_title="Price ($)",
         template="plotly_white",
@@ -275,7 +238,7 @@ def main() -> None:
     # --- TAB 2: 차트 백테스팅 ---
     with tab2:
         st.subheader("🔍 과거 차트 복기 (Visual Proof)")
-        st.info("💡 일목균형표 + 거래량 전략 (일봉, 1년): 구름 돌파 + TK교차 + 거래량 평균 이상")
+        st.info("💡 터틀 트레이딩 전략 (일봉, 1년): 20일 최고가 돌파 매수 → 10일 최저가 이탈 손절")
         
         col_sel, col_blank = st.columns([1, 3])
         with col_sel:
@@ -295,14 +258,14 @@ def main() -> None:
                     st.markdown(f"""
                     <div style='display: flex; gap: 20px; justify-content: center; margin-top: 10px;'>
                         <div style='background:#e8f5e9; padding:15px 30px; border-radius:10px; border:1px solid #c8e6c9;'>
-                            <span style='font-size:1.1em; color:#2e7d32;'>🟢 일목 매수: <b>{len(buys)}회</b></span>
+                            <span style='font-size:1.1em; color:#2e7d32;'>🟢 터틀 매수: <b>{len(buys)}회</b></span>
                         </div>
                         <div style='background:#ffebee; padding:15px 30px; border-radius:10px; border:1px solid #ffcdd2;'>
-                            <span style='font-size:1.1em; color:#c62828;'>🔴 일목 매도: <b>{len(sells)}회</b></span>
+                            <span style='font-size:1.1em; color:#c62828;'>🔴 터틀 손절: <b>{len(sells)}회</b></span>
                         </div>
                     </div>
                     <p style='text-align: center; color: gray; font-size: 0.8em; margin-top: 10px;'>
-                        * 일목균형표 + 거래량: TK교차 + 구름 돌파 + 거래량 평균 이상
+                        * 터틀 트레이딩: Richard Dennis의 전설적인 동키안 채널 브레이크아웃 전략
                     </p>
                     """, unsafe_allow_html=True)
                 else:
