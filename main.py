@@ -36,15 +36,24 @@ if sys.platform == 'win32':
 # CONFIGURATION & CONSTANTS
 # ============================================================================
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-CONFIG_PATH = os.path.join(SCRIPT_DIR, 'config.json')
 
-try:
-    with open(CONFIG_PATH, 'r', encoding='utf-8') as f:
-        CONFIG = json.load(f)
-    BOT_TOKEN: str = CONFIG['telegram']['bot_token']
-    CHAT_ID: str = CONFIG['telegram']['chat_id']
-except FileNotFoundError:
-    print("⚠️ config.json 파일을 찾을 수 없습니다. 텔레그램 기능이 제한될 수 있습니다.")
+# Telegram Configuration (Environment Variables)
+BOT_TOKEN = os.getenv("TELEGRAM_TOKEN")
+CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+
+# Fallback to Streamlit Secrets (for cloud deployment)
+if not BOT_TOKEN or not CHAT_ID:
+    try:
+        import streamlit as st
+        if hasattr(st, "secrets"):
+            BOT_TOKEN = st.secrets.get("TELEGRAM_TOKEN", "")
+            CHAT_ID = st.secrets.get("TELEGRAM_CHAT_ID", "")
+    except Exception:
+        pass
+
+# Warning if not configured
+if not BOT_TOKEN or not CHAT_ID:
+    print("⚠️ 텔레그램 설정이 없습니다. 알림이 전송되지 않습니다.")
     BOT_TOKEN = ""
     CHAT_ID = ""
 
@@ -487,9 +496,15 @@ def main() -> None:
     # 2. Data Fetching
     print("\n데이터 수집 중...")
     data = yf.download(ALL_STOCKS, period='1y', auto_adjust=False, group_by='ticker', progress=False)
+    
     if data.empty:
         print("❌ 데이터 다운로드 실패.")
         return
+
+    # ✅ [긴급 추가] 결측치 제거 코드
+    print("데이터 전처리 중 (결측치 처리)...")
+    data = data.ffill()  # 앞의 값으로 빈칸 채우기
+    data = data.dropna(how='all')  # 데이터가 아예 없는 행 삭제
 
     # 3. Market Analysis
     market_blocked, market_status, tnx_price, tnx_change = analyze_market_condition(data)

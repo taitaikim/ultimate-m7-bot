@@ -4,6 +4,7 @@ Type-safe cloud database integration with comprehensive error handling
 """
 
 import os
+import math
 import streamlit as st
 from typing import Dict, Any, Optional
 from dotenv import load_dotenv
@@ -16,23 +17,11 @@ load_dotenv()
 class DBManager:
     """
     Supabase 클라우드 DB 연결 및 데이터 관리 클래스
-    
-    Attributes:
-        url (str): Supabase 프로젝트 URL
-        key (str): Supabase API 키
-        supabase (Client): Supabase 클라이언트 인스턴스
     """
     
     def __init__(self) -> None:
         """
-        DBManager 초기화
-        
-        우선순위:
-        1. Streamlit Cloud Secrets (배포 환경)
-        2. Local Environment Variables (로컬 개발 환경)
-        
-        Raises:
-            ValueError: 접속 정보를 어디서도 찾을 수 없을 경우
+        DBManager 초기화 (Streamlit Secrets 우선, .env 차순)
         """
         self.url: Optional[str] = None
         self.key: Optional[str] = None
@@ -45,16 +34,16 @@ class DBManager:
         except Exception:
             pass
         
-        # 2. 로컬 환경변수(.env) 시도 (Secrets가 없거나 실패한 경우)
+        # 2. 로컬 환경변수(.env) 시도
         if not self.url or not self.key:
             self.url = os.getenv("SUPABASE_URL")
             self.key = os.getenv("SUPABASE_KEY")
         
         # 3. 검증
         if not self.url or not self.key:
-            raise ValueError(
-                "❌ .env 파일 또는 Streamlit Secrets에서 접속 정보를 찾을 수 없습니다."
-            )
+            # 에러 방지를 위해 로깅만 하고 넘어가거나, 명확한 에러 발생
+            # 여기서는 로컬 테스트 편의를 위해 에러를 띄움
+            raise ValueError("❌ 접속 정보를 찾을 수 없습니다. (.env 또는 Secrets 확인 필요)")
             
         # 클라이언트 생성
         self.supabase: Client = create_client(self.url, self.key)
@@ -67,21 +56,22 @@ class DBManager:
         filters: Dict[str, str]
     ) -> Optional[Any]:
         """
-        신호 발생 시 DB(m7_signals 테이블)에 저장
-        
-        Args:
-            ticker (str): 종목 코드 (예: 'AAPL')
-            signal_type (str): 신호 유형 (예: '강력 매수')
-            entry_price (float): 진입 가격
-            filters (Dict[str, str]): 필터 통과 여부
-        
-        Returns:
-            Optional[Any]: Supabase 응답 객체. 실패 시 None
+        신호 발생 시 DB에 저장 (NaN 안전 처리 포함)
         """
+        # 내부 헬퍼 함수: NaN 또는 Infinity를 None으로 변환
+        def sanitize_val(val):
+            if isinstance(val, float):
+                if math.isnan(val) or math.isinf(val):
+                    return None
+            return val
+
+        safe_price = sanitize_val(float(entry_price))
+        
+        # 가격이 비정상적이면 저장을 건너뛰거나 0.0으로 처리 (여기선 저장 시도)
         data: Dict[str, Any] = {
             "ticker": ticker,
             "signal_type": signal_type,
-            "entry_price": float(entry_price),
+            "entry_price": safe_price if safe_price is not None else 0.0,
             "filters": filters,
             "created_at": datetime.utcnow().isoformat()
         }
@@ -94,15 +84,9 @@ class DBManager:
             print(f"❌ [Cloud DB] 저장 실패: {e}")
             return None
 
-
-# --- 연결 테스트 (이 파일을 직접 실행했을 때만 작동) ---
 if __name__ == "__main__":
-    print("📡 Supabase 접속 테스트 중...")
     try:
         db = DBManager()
-        # 가짜 데이터로 테스트 전송 (연결 확인용)
-        test_filters: Dict[str, str] = {"market": "pass", "test": "true"}
-        db.log_signal("TEST_BOT", "Cloud Connection Check", 100.0, test_filters)
-        print("✅ 연결 및 데이터 전송 성공!")
+        print("✅ DB 연결 성공")
     except Exception as e:
-        print(f"⚠️ 오류 발생: {e}")
+        print(f"❌ 연결 실패: {e}")

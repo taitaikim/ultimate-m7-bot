@@ -169,28 +169,24 @@ Interactive buttons showing recently analyzed stocks with signal counts
 
 Create `.env` file with:
 ```env
+# Supabase Configuration
 SUPABASE_URL=https://your-project.supabase.co
 SUPABASE_KEY=your-anon-key
+
+# Telegram Configuration
+TELEGRAM_TOKEN=your-bot-token
+TELEGRAM_CHAT_ID=your-chat-id
 ```
 
 ### Streamlit Secrets (for Cloud Deployment)
 
 Create `.streamlit/secrets.toml`:
 ```toml
+[general]
 SUPABASE_URL = "https://your-project.supabase.co"
 SUPABASE_KEY = "your-anon-key"
-```
-
-### Telegram Configuration
-
-Create `config.json`:
-```json
-{
-    "telegram": {
-        "bot_token": "1234567890:ABCdefGHIjklMNOpqrsTUVwxyz",
-        "chat_id": "123456789"
-    }
-}
+TELEGRAM_TOKEN = "your-bot-token"
+TELEGRAM_CHAT_ID = "your-chat-id"
 ```
 
 ---
