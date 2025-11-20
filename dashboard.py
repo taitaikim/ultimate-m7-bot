@@ -1,6 +1,6 @@
 """
-M7 Bot - Streamlit Dashboard (V3.0 Turtle Trading)
-Turtle Trading Breakout Strategy (Donchian Channel)
+M7 Bot - Streamlit Dashboard (V4.0 Trendline Breakdown)
+Trendline Breakdown Strategy (Support Line Break)
 """
 
 import streamlit as st
@@ -75,7 +75,7 @@ def load_signals_data(limit: int = 100) -> pd.DataFrame:
 @st.cache_data(ttl=3600)
 def run_technical_backtest(ticker: str, period: str = "1y"):
     """
-    과거 데이터 기반 기술적 백테스팅 (로직 v3.0: 터틀 트레이딩 브레이크아웃)
+    과거 데이터 기반 기술적 백테스팅 (로직 v4.0: 추세선 브레이크다운)
     """
     try:
         # 일봉 데이터
@@ -88,9 +88,8 @@ def run_technical_backtest(ticker: str, period: str = "1y"):
         if isinstance(df.columns, pd.MultiIndex):
             df.columns = df.columns.get_level_values(0)
             
-        # 터틀 트레이딩 지표: 동키안 채널 (Donchian Channel)
-        df['High_20'] = df['High'].rolling(window=20).max()  # 20일 최고가
-        df['Low_10'] = df['Low'].rolling(window=10).min()    # 10일 최저가
+        # 이동평균선 계산 (추세선 대용)
+        df['MA20'] = df['Close'].rolling(window=20).mean()
         
         buy_signals = []
         sell_signals = []
@@ -99,21 +98,24 @@ def run_technical_backtest(ticker: str, period: str = "1y"):
         holding = False 
         entry_price = None
         
-        for i in range(20, len(df)):  # 20일 이후부터 계산
+        for i in range(20, len(df)):
             price = df['Close'].iloc[i]
-            high_20 = df['High_20'].iloc[i-1]  # 전일까지의 20일 최고가
-            low_10 = df['Low_10'].iloc[i-1]    # 전일까지의 10일 최저가
+            ma20 = df['MA20'].iloc[i]
             
-            # 🟢 매수 로직: 20일 최고가 돌파 (Breakout)
+            # 🟢 매수 로직: 가격이 추세선(MA20) 위에 있을 때
             if not holding:
-                if price > high_20:
+                if price > ma20:
                     buy_signals.append((df.index[i], price))
                     holding = True
                     entry_price = price
             
-            # 🔴 손절 로직: 10일 최저가 이탈
+            # 🔴 매도 로직: 가격이 추세선(MA20)을 하향 돌파
             elif holding:
-                if price < low_10:
+                prev_price = df['Close'].iloc[i-1]
+                prev_ma20 = df['MA20'].iloc[i-1]
+                
+                # 추세선 하향 돌파 (Breakdown)
+                if prev_price >= prev_ma20 and price < ma20:
                     sell_signals.append((df.index[i], price))
                     holding = False
                     entry_price = None
@@ -134,13 +136,20 @@ def plot_backtest_chart(ticker, df, buy_signals, sell_signals):
         mode='lines', name='Price',
         line=dict(color='#1f77b4', width=2)
     ))
+    
+    # 추세선 (MA20)
+    fig.add_trace(go.Scatter(
+        x=df.index, y=df['MA20'],
+        mode='lines', name='Trendline (MA20)',
+        line=dict(color='red', width=2, dash='solid')
+    ))
 
     # 매수 신호 (초록)
     if buy_signals:
         buy_dates, buy_prices = zip(*buy_signals)
         fig.add_trace(go.Scatter(
             x=buy_dates, y=buy_prices,
-            mode='markers', name='Turtle Breakout Buy',
+            mode='markers', name='Buy (Above Trendline)',
             marker=dict(symbol='triangle-up', size=12, color='green', line=dict(width=1, color='darkgreen'))
         ))
 
@@ -149,12 +158,12 @@ def plot_backtest_chart(ticker, df, buy_signals, sell_signals):
         sell_dates, sell_prices = zip(*sell_signals)
         fig.add_trace(go.Scatter(
             x=sell_dates, y=sell_prices,
-            mode='markers', name='Turtle Stop Loss',
+            mode='markers', name='Sell (Trendline Break)',
             marker=dict(symbol='triangle-down', size=12, color='red', line=dict(width=1, color='darkred'))
         ))
 
     fig.update_layout(
-        title=f"📈 {ticker} Turtle Trading Strategy (Last 1 Year)",
+        title=f"📈 {ticker} Trendline Breakdown Strategy (Last 1 Year)",
         xaxis_title="Date",
         yaxis_title="Price ($)",
         template="plotly_white",
@@ -238,7 +247,7 @@ def main() -> None:
     # --- TAB 2: 차트 백테스팅 ---
     with tab2:
         st.subheader("🔍 과거 차트 복기 (Visual Proof)")
-        st.info("💡 터틀 트레이딩 전략 (일봉, 1년): 20일 최고가 돌파 매수 → 10일 최저가 이탈 손절")
+        st.info("💡 추세선 브레이크다운 전략 (일봉, 1년): 20일 이평선(추세선) 위에서 매수 → 추세선 하향 돌파 시 손절")
         
         col_sel, col_blank = st.columns([1, 3])
         with col_sel:
@@ -258,14 +267,14 @@ def main() -> None:
                     st.markdown(f"""
                     <div style='display: flex; gap: 20px; justify-content: center; margin-top: 10px;'>
                         <div style='background:#e8f5e9; padding:15px 30px; border-radius:10px; border:1px solid #c8e6c9;'>
-                            <span style='font-size:1.1em; color:#2e7d32;'>🟢 터틀 매수: <b>{len(buys)}회</b></span>
+                            <span style='font-size:1.1em; color:#2e7d32;'>🟢 추세선 매수: <b>{len(buys)}회</b></span>
                         </div>
                         <div style='background:#ffebee; padding:15px 30px; border-radius:10px; border:1px solid #ffcdd2;'>
-                            <span style='font-size:1.1em; color:#c62828;'>🔴 터틀 손절: <b>{len(sells)}회</b></span>
+                            <span style='font-size:1.1em; color:#c62828;'>🔴 추세선 이탈: <b>{len(sells)}회</b></span>
                         </div>
                     </div>
                     <p style='text-align: center; color: gray; font-size: 0.8em; margin-top: 10px;'>
-                        * 터틀 트레이딩: Richard Dennis의 전설적인 동키안 채널 브레이크아웃 전략
+                        * 추세선 브레이크다운: 하단-하단을 이은 추세선(MA20)을 하향 돌파 시 손절
                     </p>
                     """, unsafe_allow_html=True)
                 else:
