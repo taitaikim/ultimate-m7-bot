@@ -314,34 +314,88 @@ def main() -> None:
                     # ATR 기반 포지션 사이징 정보
                     if positions:
                         st.markdown("---")
-                        st.subheader("📊 ATR 기반 포지션 사이징")
-                        st.info("💡 변동성이 높을수록 비중을 낮춰 리스크를 관리합니다")
+                        st.subheader("💰 얼마나 사야 할까? (스마트 비중 계산)")
+                        
+                        # 초보자용 설명
+                        with st.expander("❓ 이게 뭔가요? (클릭하면 설명)"):
+                            st.markdown("""
+                            ### 🎯 ATR 포지션 사이징이란?
+                            
+                            **간단 요약**: 주식이 흔들릴 때 적게 사고, 안정적이면 많이 사는 방법입니다.
+                            
+                            **왜 필요한가요?**
+                            - 🎢 **TSLA, NVDA**: 하루 10% 오르락내리락 → ⚠️ 위험하니 조금만 사기
+                            - 📈 **AAPL, MSFT**: 하루 2% 정도만 움직임 → ✅ 안전하니 더 많이 사기
+                            
+                            **ATR (Average True Range)**: 주식이 얼마나 요동치는지 측정하는 숫자
+                            - ATR이 **크면** = 변동성 높음 = 위험 = 적게 사기
+                            - ATR이 **작으면** = 변동성 낮음 = 안전 = 많이 사기
+                            
+                            **계좌 1.5% 리스크**: 어떤 주식을 사든 최대 손실은 계좌의 1.5%로 동일하게 유지
+                            """)
+                        
+                        st.info("💡 **핵심**: 변동성이 높을수록 비중을 자동으로 낮춰서 안전하게 투자합니다")
                         
                         # 최근 3개 신호만 표시
                         recent_positions = positions[-3:] if len(positions) > 3 else positions
                         
                         for pos in recent_positions:
+                            # ATR 레벨 판단 (상대적)
+                            if len(positions) > 1:
+                                all_atrs = [p['atr'] for p in positions]
+                                avg_atr = sum(all_atrs) / len(all_atrs)
+                                if pos['atr'] < avg_atr * 0.9:
+                                    risk_level = "🟢 낮음 (안정)"
+                                    risk_color = "#28a745"
+                                    border_color = "#28a745"
+                                elif pos['atr'] > avg_atr * 1.1:
+                                    risk_level = "🔴 높음 (주의)"
+                                    risk_color = "#dc3545"
+                                    border_color = "#dc3545"
+                                else:
+                                    risk_level = "🟡 보통"
+                                    risk_color = "#ffc107"
+                                    border_color = "#ffc107"
+                            else:
+                                risk_level = "🟡 보통"
+                                risk_color = "#ffc107"
+                                border_color = "#28a745"
+                            
                             st.markdown(f"""
-                            <div style='background:#f8f9fa; padding:12px; border-radius:8px; margin:8px 0; border-left:4px solid #28a745;'>
-                                <div style='display:flex; justify-content:space-between; align-items:center;'>
+                            <div style='background:#f8f9fa; padding:15px; border-radius:8px; margin:10px 0; border-left:5px solid {border_color};'>
+                                <div style='margin-bottom:10px;'>
+                                    <span style='font-size:1.1em; font-weight:bold;'>📅 {pos['date'].strftime('%Y-%m-%d')}</span>
+                                    <span style='float:right; background:{risk_color}; color:white; padding:3px 10px; border-radius:12px; font-size:0.9em;'>
+                                        변동성: {risk_level}
+                                    </span>
+                                </div>
+                                <div style='display:grid; grid-template-columns: 1fr 1fr 1fr; gap:15px; margin-top:10px;'>
                                     <div>
-                                        <b>📅 {pos['date'].strftime('%Y-%m-%d')}</b> | 
-                                        가격: ${pos['price']:.2f} | 
-                                        ATR: ${pos['atr']:.2f}
+                                        <div style='color:#666; font-size:0.85em;'>💵 주가</div>
+                                        <div style='font-size:1.1em; font-weight:bold;'>${pos['price']:.2f}</div>
                                     </div>
-                                    <div style='text-align:right;'>
-                                        <div style='font-size:1.2em; color:#28a745; font-weight:bold;'>
-                                            {pos['shares']:,}주 ({pos['position_pct']:.1f}%)
-                                        </div>
-                                        <div style='font-size:0.9em; color:#666;'>
-                                            ${pos['position_value']:,.0f}
+                                    <div>
+                                        <div style='color:#666; font-size:0.85em;'>📊 ATR (변동폭)</div>
+                                        <div style='font-size:1.1em; font-weight:bold;'>${pos['atr']:.2f}</div>
+                                    </div>
+                                    <div>
+                                        <div style='color:#666; font-size:0.85em;'>🎯 추천 비중</div>
+                                        <div style='font-size:1.3em; font-weight:bold; color:#28a745;'>{pos['position_pct']:.1f}%</div>
+                                    </div>
+                                </div>
+                                <div style='margin-top:15px; padding:10px; background:white; border-radius:5px;'>
+                                    <div style='display:flex; justify-content:space-between; align-items:center;'>
+                                        <div style='color:#666;'>💡 추천 매수량:</div>
+                                        <div>
+                                            <span style='font-size:1.2em; font-weight:bold; color:#007bff;'>{pos['shares']:,}주</span>
+                                            <span style='color:#666; margin-left:10px;'>(≈ ${pos['position_value']:,.0f})</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             """, unsafe_allow_html=True)
                     
-                    st.markdown(f"""
+                    st.markdown("""
                     <p style='text-align: center; color: gray; font-size: 0.8em; margin-top: 20px;'>
                         * 추세선 브레이크다운 + ATR 포지션 사이징: 계좌 1.5% 리스크 기준
                     </p>
