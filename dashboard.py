@@ -1,6 +1,6 @@
 """
-M7 Bot - Streamlit Dashboard (V2.5 Trend Following)
-Golden Cross/Death Cross Strategy
+M7 Bot - Streamlit Dashboard (V2.6 Channel Trading)
+Bollinger Band Channel Strategy
 """
 
 import streamlit as st
@@ -75,7 +75,7 @@ def load_signals_data(limit: int = 100) -> pd.DataFrame:
 @st.cache_data(ttl=3600)
 def run_technical_backtest(ticker: str, period: str = "6mo"):
     """
-    과거 데이터 기반 기술적 백테스팅 (로직 v2.5: 추세추종 - 골든크로스/데드크로스)
+    과거 데이터 기반 기술적 백테스팅 (로직 v2.6: 채널 매매 - 상승채널 전략)
     """
     try:
         # auto_adjust=True로 데이터 보정
@@ -88,43 +88,49 @@ def run_technical_backtest(ticker: str, period: str = "6mo"):
         if isinstance(df.columns, pd.MultiIndex):
             df.columns = df.columns.get_level_values(0)
             
-        # 지표 계산
-        df['MA5'] = df['Close'].rolling(window=5).mean()   # 단기 이평선
-        df['MA20'] = df['Close'].rolling(window=20).mean()  # 장기 이평선
-        
-        # RSI
-        delta = df['Close'].diff()
-        gain = (delta.where(delta > 0, 0)).rolling(window=14).mean()
-        loss = (-delta.where(delta < 0, 0)).rolling(window=14).mean()
-        rs = gain / loss
-        df['RSI'] = 100 - (100 / (1 + rs))
+        # 지표 계산: 볼린저 밴드 (20일 이평선 ± 2 표준편차)
+        df['MA20'] = df['Close'].rolling(window=20).mean()
+        df['STD20'] = df['Close'].rolling(window=20).std()
+        df['Upper_Band'] = df['MA20'] + (df['STD20'] * 2)  # 상단 채널
+        df['Lower_Band'] = df['MA20'] - (df['STD20'] * 2)  # 하단 채널
         
         buy_signals = []
         sell_signals = []
         
         # 포지션 보유 상태
         holding = False 
+        entry_price = None
         
-        for i in range(20, len(df) - 1):  # -1을 해서 다음 날 확인 가능하게
-            prev_ma5 = df['MA5'].iloc[i-1]
-            prev_ma20 = df['MA20'].iloc[i-1]
-            curr_ma5 = df['MA5'].iloc[i]
-            curr_ma20 = df['MA20'].iloc[i]
-            
+        for i in range(20, len(df)):
             price = df['Close'].iloc[i]
-            rsi = df['RSI'].iloc[i]
+            lower_band = df['Lower_Band'].iloc[i]
+            upper_band = df['Upper_Band'].iloc[i]
+            ma20 = df['MA20'].iloc[i]
             
-            # 🟢 매수 로직: 골든크로스 (단기 이평선이 장기 이평선을 상향 돌파) + RSI < 60
-            # RSI 조건을 추가해서 과매수 구간에서는 진입하지 않도록
-            if not holding and prev_ma5 <= prev_ma20 and curr_ma5 > curr_ma20 and rsi < 60:
-                buy_signals.append((df.index[i], price))
-                holding = True
+            # 🟢 매수 로직: 가격이 하단 채널 근처에 도달 (채널 하단의 ±2% 이내)
+            # 그리고 MA20이 상승 추세일 때 (현재 MA20 > 5일 전 MA20)
+            if not holding and i >= 25:  # 5일 전 데이터 필요
+                lower_threshold = lower_band * 1.02  # 하단 채널 +2%
+                ma20_5days_ago = df['MA20'].iloc[i-5]
+                
+                # 채널 하단 근처 + 상승 추세 확인
+                if price <= lower_threshold and ma20 > ma20_5days_ago:
+                    buy_signals.append((df.index[i], price))
+                    holding = True
+                    entry_price = price
             
-            # 🔴 매도 로직: 데드크로스 (단기 이평선이 장기 이평선을 하향 돌파)
-            # 추세가 명확하게 꺾일 때 매도
-            elif holding and prev_ma5 >= prev_ma20 and curr_ma5 < curr_ma20:
-                sell_signals.append((df.index[i], price))
-                holding = False
+            # 🔴 매도 또는 손절 로직
+            elif holding:
+                # 1) 이익실현: 가격이 상단 채널 근처 도달 (상단 채널의 -2% 이내)
+                upper_threshold = upper_band * 0.98
+                
+                # 2) 손절: 가격이 하단 채널을 5% 이상 이탈
+                stop_loss = lower_band * 0.95
+                
+                if price >= upper_threshold or price < stop_loss:
+                    sell_signals.append((df.index[i], price))
+                    holding = False
+                    entry_price = None
                 
         return df, buy_signals, sell_signals
         
@@ -148,7 +154,7 @@ def plot_backtest_chart(ticker, df, buy_signals, sell_signals):
         buy_dates, buy_prices = zip(*buy_signals)
         fig.add_trace(go.Scatter(
             x=buy_dates, y=buy_prices,
-            mode='markers', name='Golden Cross (Buy)',
+            mode='markers', name='Channel Bottom Buy',
             marker=dict(symbol='triangle-up', size=12, color='green', line=dict(width=1, color='darkgreen'))
         ))
 
@@ -157,12 +163,12 @@ def plot_backtest_chart(ticker, df, buy_signals, sell_signals):
         sell_dates, sell_prices = zip(*sell_signals)
         fig.add_trace(go.Scatter(
             x=sell_dates, y=sell_prices,
-            mode='markers', name='Death Cross (Sell)',
+            mode='markers', name='Channel Top Sell / Stop Loss',
             marker=dict(symbol='triangle-down', size=12, color='red', line=dict(width=1, color='darkred'))
         ))
 
     fig.update_layout(
-        title=f"📈 {ticker} Trend Following Strategy (Last 6 Months)",
+        title=f"📈 {ticker} Channel Trading Strategy (Last 6 Months)",
         xaxis_title="Date",
         yaxis_title="Price ($)",
         template="plotly_white",
@@ -246,7 +252,7 @@ def main() -> None:
     # --- TAB 2: 차트 백테스팅 ---
     with tab2:
         st.subheader("🔍 과거 차트 복기 (Visual Proof)")
-        st.info("💡 골든크로스/데드크로스 기반 추세추종 전략: 단기선(5일)과 장기선(20일)의 교차점을 시각화합니다.")
+        st.info("💡 볼린저 밴드 채널 전략: 채널 하단에서 매수, 채널 상단에서 매도/채널 이탈 시 손절")
         
         col_sel, col_blank = st.columns([1, 3])
         with col_sel:
@@ -266,14 +272,14 @@ def main() -> None:
                     st.markdown(f"""
                     <div style='display: flex; gap: 20px; justify-content: center; margin-top: 10px;'>
                         <div style='background:#e8f5e9; padding:15px 30px; border-radius:10px; border:1px solid #c8e6c9;'>
-                            <span style='font-size:1.1em; color:#2e7d32;'>🟢 골든크로스: <b>{len(buys)}회</b></span>
+                            <span style='font-size:1.1em; color:#2e7d32;'>🟢 채널 하단 매수: <b>{len(buys)}회</b></span>
                         </div>
                         <div style='background:#ffebee; padding:15px 30px; border-radius:10px; border:1px solid #ffcdd2;'>
-                            <span style='font-size:1.1em; color:#c62828;'>🔴 데드크로스: <b>{len(sells)}회</b></span>
+                            <span style='font-size:1.1em; color:#c62828;'>🔴 채널 상단/손절: <b>{len(sells)}회</b></span>
                         </div>
                     </div>
                     <p style='text-align: center; color: gray; font-size: 0.8em; margin-top: 10px;'>
-                        * 골든크로스(MA5↗MA20) 매수 / 데드크로스(MA5↘MA20) 매도 전략
+                        * 볼린저 밴드 기반 채널 매매 (하단 매수 → 상단 매도 또는 손절)
                     </p>
                     """, unsafe_allow_html=True)
                 else:
