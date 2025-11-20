@@ -1,6 +1,6 @@
 """
-M7 Bot - Streamlit Dashboard (V2.2)
-Visual Backtesting & Signal Monitoring
+M7 Bot - Streamlit Dashboard (V2.2.1)
+Visual Backtesting & Signal Monitoring (MultiIndex Bug Fix)
 """
 
 import streamlit as st
@@ -55,7 +55,7 @@ def load_signals_data(limit: int = 100) -> pd.DataFrame:
     try:
         # Streamlit Cloud Secrets 우선 처리
         try:
-            if 'SUPABASE_URL' in st.secrets:
+            if hasattr(st, "secrets") and "SUPABASE_URL" in st.secrets:
                 os.environ['SUPABASE_URL'] = st.secrets['SUPABASE_URL']
                 os.environ['SUPABASE_KEY'] = st.secrets['SUPABASE_KEY']
         except Exception:
@@ -80,9 +80,16 @@ def run_technical_backtest(ticker: str, period: str = "6mo"):
     과거 데이터 기반 기술적 백테스팅 (시각화용)
     """
     try:
+        # 데이터 다운로드
         df = yf.download(ticker, period=period, progress=False)
+        
         if df.empty:
             return None, None, None
+            
+        # 🚨 [Bug Fix] MultiIndex 컬럼 문제 해결
+        # yfinance 최신 버전이 ('Close', 'AAPL') 형태로 주는 경우 'Close'로 평탄화
+        if isinstance(df.columns, pd.MultiIndex):
+            df.columns = df.columns.get_level_values(0)
             
         # 지표 계산 (main.py 로직과 동일하게 적용)
         df['MA20'] = df['Close'].rolling(window=20).mean()
@@ -105,18 +112,19 @@ def run_technical_backtest(ticker: str, period: str = "6mo"):
         elif ticker in ['AAPL', 'MSFT', 'QQQ']: buy_rsi_th = 35
         
         for i in range(60, len(df)):
-            # 매수 로직: RSI 과매도 + 골든크로스 근처
+            # 매수 로직: RSI 과매도
             if df['RSI'].iloc[i] < buy_rsi_th:
                 buy_signals.append((df.index[i], df['Close'].iloc[i]))
             
-            # 매도 로직: RSI 과매수 (단순화)
+            # 매도 로직: RSI 과매수
             elif df['RSI'].iloc[i] > 70:
                 sell_signals.append((df.index[i], df['Close'].iloc[i]))
                 
         return df, buy_signals, sell_signals
         
     except Exception as e:
-        st.error(f"백테스팅 오류: {e}")
+        # 에러 발생 시 상세 내용을 화면에 표시하지 않고 조용히 처리 (사용자 경험 위해)
+        print(f"백테스팅 오류: {e}")
         return None, None, None
 
 def plot_backtest_chart(ticker, df, buy_signals, sell_signals):
@@ -241,7 +249,7 @@ def main() -> None:
                     </div>
                     """, unsafe_allow_html=True)
                 else:
-                    st.error("데이터를 불러올 수 없습니다.")
+                    st.warning("차트 데이터를 불러오는 데 실패했습니다. 잠시 후 다시 시도해주세요.")
 
 if __name__ == "__main__":
     main()
