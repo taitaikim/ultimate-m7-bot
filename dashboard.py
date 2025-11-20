@@ -1,6 +1,6 @@
 """
-M7 Bot - Streamlit Dashboard (V2.3 UI/UX Polish)
-Enhanced UI/UX & Adjusted Backtest Parameters
+M7 Bot - Streamlit Dashboard (V2.3 Trend Following)
+Enhanced UI/UX & Trend Following Backtest Logic
 """
 
 import streamlit as st
@@ -75,21 +75,21 @@ def load_signals_data(limit: int = 100) -> pd.DataFrame:
 @st.cache_data(ttl=3600)
 def run_technical_backtest(ticker: str, period: str = "6mo"):
     """
-    과거 데이터 기반 기술적 백테스팅 (시각화용)
+    과거 데이터 기반 기술적 백테스팅 (로직 개선: 추세 추종)
     """
     try:
-        df = yf.download(ticker, period=period, progress=False)
+        # [수정] auto_adjust=True 추가 (주식 분할/배당 락 데이터 보정)
+        df = yf.download(ticker, period=period, progress=False, auto_adjust=True)
         
         if df.empty:
             return None, None, None
             
-        # Fix for yfinance MultiIndex
+        # MultiIndex 처리
         if isinstance(df.columns, pd.MultiIndex):
             df.columns = df.columns.get_level_values(0)
             
         # 지표 계산
         df['MA20'] = df['Close'].rolling(window=20).mean()
-        df['MA60'] = df['Close'].rolling(window=60).mean()
         
         # RSI
         delta = df['Close'].diff()
@@ -98,22 +98,28 @@ def run_technical_backtest(ticker: str, period: str = "6mo"):
         rs = gain / loss
         df['RSI'] = 100 - (100 / (1 + rs))
         
-        # 신호 발굴
         buy_signals = []
         sell_signals = []
         
-        # [수정] 시각화용 기준 완화 (차트에 화살표가 좀 나오게 하기 위함)
-        # 실제 매매 로직(30)보다 조금 더 관대하게(40) 잡아서 시각적 재미 부여
-        buy_rsi_th = 40  
+        # 포지션 보유 상태 확인용 변수
+        holding = False 
         
-        for i in range(60, len(df)):
-            # 매수: RSI 과매도
-            if df['RSI'].iloc[i] < buy_rsi_th:
-                buy_signals.append((df.index[i], df['Close'].iloc[i]))
+        for i in range(20, len(df)):
+            price = df['Close'].iloc[i]
+            rsi = df['RSI'].iloc[i]
+            ma20 = df['MA20'].iloc[i]
             
-            # 매도: RSI 과매수
-            elif df['RSI'].iloc[i] > 70:
-                sell_signals.append((df.index[i], df['Close'].iloc[i]))
+            # 🟢 매수 로직: RSI가 과매도 구간(40) 아래일 때 (저점 매수)
+            if not holding and rsi < 40:
+                buy_signals.append((df.index[i], price))
+                holding = True
+            
+            # 🔴 매도 로직: (수정됨) "추세 추종형 매도"
+            # 단순히 RSI가 높다고 파는 게 아니라, 가격이 20일 이동평균선 아래로 깨질 때 매도
+            # (상승세를 최대한 즐기다가 꺾일 때 파는 전략)
+            elif holding and price < ma20 and rsi > 50:
+                sell_signals.append((df.index[i], price))
+                holding = False
                 
         return df, buy_signals, sell_signals
         
@@ -211,7 +217,7 @@ def main() -> None:
                 column_config={
                     "created_at": st.column_config.DatetimeColumn(
                         "발생 시간",
-                        format="MM/DD HH:mm", # 날짜 포맷 깔끔하게
+                        format="MM/DD HH:mm",
                     ),
                     "ticker": "종목",
                     "signal_type": st.column_config.TextColumn(
@@ -220,7 +226,7 @@ def main() -> None:
                     ),
                     "entry_price": st.column_config.NumberColumn(
                         "진입가",
-                        format="$%.2f" # 달러 표시
+                        format="$%.2f"
                     )
                 }
             )
