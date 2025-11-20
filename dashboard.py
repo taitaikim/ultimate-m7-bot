@@ -1,6 +1,6 @@
 """
-M7 Bot - Streamlit Dashboard (V2.2.1)
-Visual Backtesting & Signal Monitoring (MultiIndex Bug Fix)
+M7 Bot - Streamlit Dashboard (V2.3 UI/UX Polish)
+Enhanced UI/UX & Adjusted Backtest Parameters
 """
 
 import streamlit as st
@@ -11,7 +11,6 @@ from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Any
 import os
 from dotenv import load_dotenv
-import ta
 
 # Load environment variables
 load_dotenv()
@@ -53,7 +52,6 @@ st.set_page_config(
 def load_signals_data(limit: int = 100) -> pd.DataFrame:
     """Supabase에서 실시간 신호 데이터 로드"""
     try:
-        # Streamlit Cloud Secrets 우선 처리
         try:
             if hasattr(st, "secrets") and "SUPABASE_URL" in st.secrets:
                 os.environ['SUPABASE_URL'] = st.secrets['SUPABASE_URL']
@@ -80,18 +78,16 @@ def run_technical_backtest(ticker: str, period: str = "6mo"):
     과거 데이터 기반 기술적 백테스팅 (시각화용)
     """
     try:
-        # 데이터 다운로드
         df = yf.download(ticker, period=period, progress=False)
         
         if df.empty:
             return None, None, None
             
-        # 🚨 [Bug Fix] MultiIndex 컬럼 문제 해결
-        # yfinance 최신 버전이 ('Close', 'AAPL') 형태로 주는 경우 'Close'로 평탄화
+        # Fix for yfinance MultiIndex
         if isinstance(df.columns, pd.MultiIndex):
             df.columns = df.columns.get_level_values(0)
             
-        # 지표 계산 (main.py 로직과 동일하게 적용)
+        # 지표 계산
         df['MA20'] = df['Close'].rolling(window=20).mean()
         df['MA60'] = df['Close'].rolling(window=60).mean()
         
@@ -106,63 +102,62 @@ def run_technical_backtest(ticker: str, period: str = "6mo"):
         buy_signals = []
         sell_signals = []
         
-        # 그룹별 RSI 기준 (기본값 적용)
-        buy_rsi_th = 30
-        if ticker in ['NVDA', 'TSLA', 'TQQQ']: buy_rsi_th = 25
-        elif ticker in ['AAPL', 'MSFT', 'QQQ']: buy_rsi_th = 35
+        # [수정] 시각화용 기준 완화 (차트에 화살표가 좀 나오게 하기 위함)
+        # 실제 매매 로직(30)보다 조금 더 관대하게(40) 잡아서 시각적 재미 부여
+        buy_rsi_th = 40  
         
         for i in range(60, len(df)):
-            # 매수 로직: RSI 과매도
+            # 매수: RSI 과매도
             if df['RSI'].iloc[i] < buy_rsi_th:
                 buy_signals.append((df.index[i], df['Close'].iloc[i]))
             
-            # 매도 로직: RSI 과매수
+            # 매도: RSI 과매수
             elif df['RSI'].iloc[i] > 70:
                 sell_signals.append((df.index[i], df['Close'].iloc[i]))
                 
         return df, buy_signals, sell_signals
         
     except Exception as e:
-        # 에러 발생 시 상세 내용을 화면에 표시하지 않고 조용히 처리 (사용자 경험 위해)
         print(f"백테스팅 오류: {e}")
         return None, None, None
 
 def plot_backtest_chart(ticker, df, buy_signals, sell_signals):
-    """Plotly를 이용한 인터랙티브 차트 그리기"""
+    """Plotly 차트 그리기"""
     fig = go.Figure()
 
-    # 1. 주가 라인
+    # 주가 라인
     fig.add_trace(go.Scatter(
         x=df.index, y=df['Close'],
         mode='lines', name='Price',
         line=dict(color='#1f77b4', width=2)
     ))
 
-    # 2. 매수 신호 (초록색 상승 화살표)
+    # 매수 신호 (초록)
     if buy_signals:
         buy_dates, buy_prices = zip(*buy_signals)
         fig.add_trace(go.Scatter(
             x=buy_dates, y=buy_prices,
-            mode='markers', name='Buy Signal',
+            mode='markers', name='Potential Buy',
             marker=dict(symbol='triangle-up', size=12, color='green', line=dict(width=1, color='darkgreen'))
         ))
 
-    # 3. 매도 신호 (빨간색 하락 화살표)
+    # 매도 신호 (빨강)
     if sell_signals:
         sell_dates, sell_prices = zip(*sell_signals)
         fig.add_trace(go.Scatter(
             x=sell_dates, y=sell_prices,
-            mode='markers', name='Sell Signal',
+            mode='markers', name='Potential Sell',
             marker=dict(symbol='triangle-down', size=12, color='red', line=dict(width=1, color='darkred'))
         ))
 
     fig.update_layout(
-        title=f"📈 {ticker} Technical Backtest (Recent 6 Months)",
+        title=f"📈 {ticker} Market Timing Simulation (Last 6 Months)",
         xaxis_title="Date",
         yaxis_title="Price ($)",
         template="plotly_white",
         hovermode="x unified",
-        height=500
+        height=500,
+        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
     )
     
     return fig
@@ -174,10 +169,9 @@ def main() -> None:
     st.title("🚀 M7 Bot Dashboard")
     st.markdown(DISCLAIMER_HTML, unsafe_allow_html=True)
     
-    # 탭 구성
     tab1, tab2 = st.tabs(["📊 실시간 신호", "📈 차트 백테스팅"])
     
-    # --- TAB 1: 실시간 신호 모니터링 ---
+    # --- TAB 1: 실시간 신호 ---
     with tab1:
         with st.sidebar:
             st.header("⚙️ 설정")
@@ -188,68 +182,91 @@ def main() -> None:
             data_limit = st.slider("표시할 신호 개수", 10, 200, 100, 10)
             
         # Load Data
-        with st.spinner("📡 클라우드 데이터를 불러오는 중..."):
+        with st.spinner("📡 클라우드 데이터 로딩 중..."):
             df = load_signals_data(limit=data_limit)
         
         if not df.empty:
-            # Metrics
+            # 요약 지표
             col1, col2, col3, col4 = st.columns(4)
             today_signals = len(df[df['created_at'].dt.date == datetime.now().date()])
             strong_buys = len(df[df['signal_type'].str.contains('STRONG|TECHNICAL', case=False, na=False)])
             
             col1.metric("총 신호", f"{len(df)}", f"+{today_signals} Today")
-            col2.metric("패턴 포착", f"{strong_buys}", "Buy Signals")
+            col2.metric("패턴 포착", f"{strong_buys}", "Opportunities")
             col3.metric("모니터링", "10개", "M7 + ETFs")
             
-            # Data Table
+            # [UI 개선] 깔끔한 테이블 표시
             st.subheader("📋 실시간 신호 내역")
+            
+            # 표시용 데이터프레임 가공
+            display_df = df.copy()
+            
+            # 1. 필요한 컬럼만 선택
+            display_df = display_df[['created_at', 'ticker', 'signal_type', 'entry_price']]
+            
             st.dataframe(
-                df[['created_at', 'ticker', 'signal_type', 'entry_price', 'filters']],
+                display_df,
                 use_container_width=True,
                 hide_index=True,
                 column_config={
-                    "created_at": st.column_config.DatetimeColumn("시간", format="MM/DD HH:mm"),
-                    "entry_price": st.column_config.NumberColumn("가격", format="$%.2f"),
-                    "filters": "필터 상태"
+                    "created_at": st.column_config.DatetimeColumn(
+                        "발생 시간",
+                        format="MM/DD HH:mm", # 날짜 포맷 깔끔하게
+                    ),
+                    "ticker": "종목",
+                    "signal_type": st.column_config.TextColumn(
+                        "신호 유형",
+                        width="medium"
+                    ),
+                    "entry_price": st.column_config.NumberColumn(
+                        "진입가",
+                        format="$%.2f" # 달러 표시
+                    )
                 }
             )
+            
+            # [UI 개선] 지저분한 JSON 필터 정보는 클릭했을 때만 보이게 숨김
+            with st.expander("🔍 상세 필터 데이터 확인하기 (디버깅용)"):
+                st.dataframe(df)
+                
         else:
-            st.info("데이터가 없습니다. 봇이 실행되면 신호가 표시됩니다.")
+            st.info("데이터베이스에 저장된 신호가 없습니다. 봇이 실행되면 표시됩니다.")
 
-    # --- TAB 2: 차트 백테스팅 (Visual Proof) ---
+    # --- TAB 2: 차트 백테스팅 ---
     with tab2:
         st.subheader("🔍 과거 차트 복기 (Visual Proof)")
-        st.info("💡 봇의 알고리즘이 과거에 적용되었다면 어디서 매수했을지 시각적으로 확인합니다.")
+        st.info("💡 봇의 매매 로직(RSI + 추세)이 과거 차트에서 어떻게 작동했는지 시각화합니다.")
         
         col_sel, col_blank = st.columns([1, 3])
         with col_sel:
             selected_ticker = st.selectbox(
                 "분석할 종목 선택", 
-                ['NVDA', 'TSLA', 'AAPL', 'MSFT', 'GOOGL', 'AMZN', 'META', 'QQQ', 'TQQQ', 'XLK']
+                ['TQQQ', 'NVDA', 'TSLA', 'AAPL', 'MSFT', 'GOOGL', 'AMZN', 'META', 'QQQ', 'XLK']
             )
         
         if selected_ticker:
-            with st.spinner(f"{selected_ticker} 과거 데이터 분석 중..."):
+            with st.spinner(f"{selected_ticker} 데이터 분석 중..."):
                 hist_df, buys, sells = run_technical_backtest(selected_ticker)
                 
                 if hist_df is not None:
-                    # 차트 그리기
                     fig = plot_backtest_chart(selected_ticker, hist_df, buys, sells)
                     st.plotly_chart(fig, use_container_width=True)
                     
-                    # 통계 표시
                     st.markdown(f"""
-                    <div style='display: flex; gap: 20px; justify-content: center;'>
-                        <div style='background:#e8f5e9; padding:10px 20px; border-radius:10px;'>
-                            <span style='font-size:1.2em;'>🟢 매수 기회: <b>{len(buys)}회</b></span>
+                    <div style='display: flex; gap: 20px; justify-content: center; margin-top: 10px;'>
+                        <div style='background:#e8f5e9; padding:15px 30px; border-radius:10px; border:1px solid #c8e6c9;'>
+                            <span style='font-size:1.1em; color:#2e7d32;'>🟢 매수 기회: <b>{len(buys)}회</b></span>
                         </div>
-                        <div style='background:#ffebee; padding:10px 20px; border-radius:10px;'>
-                            <span style='font-size:1.2em;'>🔴 매도 기회: <b>{len(sells)}회</b></span>
+                        <div style='background:#ffebee; padding:15px 30px; border-radius:10px; border:1px solid #ffcdd2;'>
+                            <span style='font-size:1.1em; color:#c62828;'>🔴 매도 기회: <b>{len(sells)}회</b></span>
                         </div>
                     </div>
+                    <p style='text-align: center; color: gray; font-size: 0.8em; margin-top: 10px;'>
+                        * 시각화용 시뮬레이션이며 실제 수익률과는 다를 수 있습니다.
+                    </p>
                     """, unsafe_allow_html=True)
                 else:
-                    st.warning("차트 데이터를 불러오는 데 실패했습니다. 잠시 후 다시 시도해주세요.")
+                    st.warning("데이터를 불러올 수 없습니다.")
 
 if __name__ == "__main__":
     main()
