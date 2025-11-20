@@ -1,16 +1,3 @@
-"""
-M7 Bot - Streamlit Dashboard (V3.0 Turtle Trading)
-Turtle Trading Breakout Strategy (Donchian Channel)
-"""
-
-import streamlit as st
-import pandas as pd
-import yf<br/>inance as yf
-import plotly.graph_objects as go
-from datetime import datetime, timedelta
-from typing import Dict, List, Optional, Any
-import os
-from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
