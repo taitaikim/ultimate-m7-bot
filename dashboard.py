@@ -1,6 +1,6 @@
 """
-M7 Bot - Streamlit Dashboard (V4.0 Trendline Breakdown)
-Trendline Breakdown Strategy (Support Line Break)
+M7 Bot - Streamlit Dashboard (V4.1 Trendline + ATR)
+Trendline Breakdown Strategy with ATR Position Sizing
 """
 
 import streamlit as st
@@ -73,16 +73,16 @@ def load_signals_data(limit: int = 100) -> pd.DataFrame:
         return pd.DataFrame()
 
 @st.cache_data(ttl=3600)
-def run_technical_backtest(ticker: str, period: str = "1y"):
+def run_technical_backtest(ticker: str, period: str = "1y", account_size: float = 100000):
     """
-    과거 데이터 기반 기술적 백테스팅 (로직 v4.0: 추세선 브레이크다운)
+    과거 데이터 기반 기술적 백테스팅 (로직 v4.1: 추세선 브레이크다운 + ATR 포지션 사이징)
     """
     try:
         # 일봉 데이터
         df = yf.download(ticker, period=period, progress=False, auto_adjust=True)
         
         if df.empty:
-            return None, None, None
+            return None, None, None, None
             
         # MultiIndex 처리
         if isinstance(df.columns, pd.MultiIndex):
@@ -91,21 +91,47 @@ def run_technical_backtest(ticker: str, period: str = "1y"):
         # 이동평균선 계산 (추세선 대용)
         df['MA20'] = df['Close'].rolling(window=20).mean()
         
+        # ATR 계산 (14일)
+        df['H-L'] = df['High'] - df['Low']
+        df['H-PC'] = abs(df['High'] - df['Close'].shift(1))
+        df['L-PC'] = abs(df['Low'] - df['Close'].shift(1))
+        df['TR'] = df[['H-L', 'H-PC', 'L-PC']].max(axis=1)
+        df['ATR'] = df['TR'].rolling(window=14).mean()
+        
         buy_signals = []
         sell_signals = []
+        position_sizes = []  # ATR 기반 포지션 크기
         
         # 포지션 보유 상태
         holding = False 
         entry_price = None
         
+        # 리스크 설정 (계좌의 1.5%)
+        risk_amount = account_size * 0.015
+        
         for i in range(20, len(df)):
             price = df['Close'].iloc[i]
             ma20 = df['MA20'].iloc[i]
+            atr = df['ATR'].iloc[i]
             
             # 🟢 매수 로직: 가격이 추세선(MA20) 위에 있을 때
-            if not holding:
+            if not holding and pd.notna(atr):
                 if price > ma20:
+                    # ATR 기반 포지션 사이징
+                    # 포지션 크기 = 리스크 금액 / (ATR × 2)
+                    shares = int(risk_amount / (atr * 2))
+                    position_value = shares * price
+                    position_pct = (position_value / account_size) * 100
+                    
                     buy_signals.append((df.index[i], price))
+                    position_sizes.append({
+                        'date': df.index[i],
+                        'price': price,
+                        'atr': atr,
+                        'shares': shares,
+                        'position_value': position_value,
+                        'position_pct': position_pct
+                    })
                     holding = True
                     entry_price = price
             
@@ -120,11 +146,11 @@ def run_technical_backtest(ticker: str, period: str = "1y"):
                     holding = False
                     entry_price = None
                 
-        return df, buy_signals, sell_signals
+        return df, buy_signals, sell_signals, position_sizes
         
     except Exception as e:
         print(f"백테스팅 오류: {e}")
-        return None, None, None
+        return None, None, None, None
 
 def plot_backtest_chart(ticker, df, buy_signals, sell_signals):
     """Plotly 차트 그리기"""
@@ -163,7 +189,7 @@ def plot_backtest_chart(ticker, df, buy_signals, sell_signals):
         ))
 
     fig.update_layout(
-        title=f"📈 {ticker} Trendline Breakdown Strategy (Last 1 Year)",
+        title=f"📈 {ticker} Trendline Breakdown + ATR Position Sizing",
         xaxis_title="Date",
         yaxis_title="Price ($)",
         template="plotly_white",
@@ -246,8 +272,8 @@ def main() -> None:
 
     # --- TAB 2: 차트 백테스팅 ---
     with tab2:
-        st.subheader("🔍 과거 차트 복기 (Visual Proof)")
-        st.info("💡 추세선 브레이크다운 전략 (일봉, 1년): 20일 이평선(추세선) 위에서 매수 → 추세선 하향 돌파 시 손절")
+        st.subheader("🔍 과거 차트 복기 + ATR 포지션 사이징")
+        st.info("💡 추세선 브레이크다운 + ATR 변동성 기반 비중 관리")
         
         col_sel, col_blank = st.columns([1, 3])
         with col_sel:
@@ -257,24 +283,67 @@ def main() -> None:
             )
         
         if selected_ticker:
+            # 계좌 크기 입력
+            account_size = st.number_input(
+                "💰 계좌 크기 (USD)", 
+                min_value=10000, 
+                max_value=10000000, 
+                value=100000, 
+                step=10000,
+                help="ATR 기반 포지션 사이징 계산에 사용됩니다"
+            )
+            
             with st.spinner(f"{selected_ticker} 데이터 분석 중..."):
-                hist_df, buys, sells = run_technical_backtest(selected_ticker)
+                hist_df, buys, sells, positions = run_technical_backtest(selected_ticker, account_size=account_size)
                 
                 if hist_df is not None:
                     fig = plot_backtest_chart(selected_ticker, hist_df, buys, sells)
                     st.plotly_chart(fig, use_container_width=True)
                     
+                    # 통계 표시
+                    col1, col2, col3 = st.columns(3)
+                    with col1:
+                        st.metric("🟢 매수 신호", f"{len(buys)}회")
+                    with col2:
+                        st.metric("🔴 손절 신호", f"{len(sells)}회")
+                    with col3:
+                        if positions:
+                            avg_position = sum(p['position_pct'] for p in positions) / len(positions)
+                            st.metric("📊 평균 비중", f"{avg_position:.1f}%")
+                    
+                    # ATR 기반 포지션 사이징 정보
+                    if positions:
+                        st.markdown("---")
+                        st.subheader("📊 ATR 기반 포지션 사이징")
+                        st.info("💡 변동성이 높을수록 비중을 낮춰 리스크를 관리합니다")
+                        
+                        # 최근 3개 신호만 표시
+                        recent_positions = positions[-3:] if len(positions) > 3 else positions
+                        
+                        for pos in recent_positions:
+                            st.markdown(f"""
+                            <div style='background:#f8f9fa; padding:12px; border-radius:8px; margin:8px 0; border-left:4px solid #28a745;'>
+                                <div style='display:flex; justify-content:space-between; align-items:center;'>
+                                    <div>
+                                        <b>📅 {pos['date'].strftime('%Y-%m-%d')}</b> | 
+                                        가격: ${pos['price']:.2f} | 
+                                        ATR: ${pos['atr']:.2f}
+                                    </div>
+                                    <div style='text-align:right;'>
+                                        <div style='font-size:1.2em; color:#28a745; font-weight:bold;'>
+                                            {pos['shares']:,}주 ({pos['position_pct']:.1f}%)
+                                        </div>
+                                        <div style='font-size:0.9em; color:#666;'>
+                                            ${pos['position_value']:,.0f}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            """, unsafe_allow_html=True)
+                    
                     st.markdown(f"""
-                    <div style='display: flex; gap: 20px; justify-content: center; margin-top: 10px;'>
-                        <div style='background:#e8f5e9; padding:15px 30px; border-radius:10px; border:1px solid #c8e6c9;'>
-                            <span style='font-size:1.1em; color:#2e7d32;'>🟢 추세선 매수: <b>{len(buys)}회</b></span>
-                        </div>
-                        <div style='background:#ffebee; padding:15px 30px; border-radius:10px; border:1px solid #ffcdd2;'>
-                            <span style='font-size:1.1em; color:#c62828;'>🔴 추세선 이탈: <b>{len(sells)}회</b></span>
-                        </div>
-                    </div>
-                    <p style='text-align: center; color: gray; font-size: 0.8em; margin-top: 10px;'>
-                        * 추세선 브레이크다운: 하단-하단을 이은 추세선(MA20)을 하향 돌파 시 손절
+                    <p style='text-align: center; color: gray; font-size: 0.8em; margin-top: 20px;'>
+                        * 추세선 브레이크다운 + ATR 포지션 사이징: 계좌 1.5% 리스크 기준
                     </p>
                     """, unsafe_allow_html=True)
                 else:
