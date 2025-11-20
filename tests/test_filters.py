@@ -1,4 +1,10 @@
 import pytest
+import sys
+import os
+
+# Add project root to sys.path to allow importing modules
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import pandas as pd
 import numpy as np
 from m7_core.filters import SrVolumeFilter

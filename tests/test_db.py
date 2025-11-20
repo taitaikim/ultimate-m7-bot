@@ -1,4 +1,10 @@
 import pytest
+import sys
+import os
+
+# Add project root to sys.path to allow importing modules
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from unittest.mock import MagicMock, patch
 from m7_cloud.db_manager import DBManager
 

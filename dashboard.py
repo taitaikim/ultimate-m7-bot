@@ -164,7 +164,11 @@ def main() -> None:
     """
     # Header
     st.title("🚀 M7 Bot Dashboard")
-    st.markdown("**SaaS Cloud Version (V2)** - Real-time Signal Monitoring")
+    
+    # ✅ [추가] 면책 조항 배너 표시
+    st.markdown(DISCLAIMER_HTML, unsafe_allow_html=True)
+    
+    st.markdown("**SaaS Cloud Version (V2.1)** - Real-time Signal Monitoring")
     st.markdown("---")
     
     # Sidebar

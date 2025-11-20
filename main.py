@@ -59,9 +59,12 @@ if not BOT_TOKEN or not CHAT_ID:
 
 # Stock Groups Configuration
 GROUPS: Dict[str, Dict[str, Any]] = {
-    'A': {'stocks': ['NVDA', 'TSLA'], 'buy_rsi': 25, 'sell_rsi': 65, 'desc': '고변동성'},
-    'B': {'stocks': ['META', 'AMZN', 'GOOGL'], 'buy_rsi': 30, 'sell_rsi': 70, 'desc': '중변동성'},
-    'C': {'stocks': ['AAPL', 'MSFT'], 'buy_rsi': 35, 'sell_rsi': 75, 'desc': '저변동성'}
+    # TQQQ 추가
+    'A': {'stocks': ['NVDA', 'TSLA', 'TQQQ'], 'buy_rsi': 25, 'sell_rsi': 65, 'desc': '고변동성'},
+    # XLK 추가
+    'B': {'stocks': ['META', 'AMZN', 'GOOGL', 'XLK'], 'buy_rsi': 30, 'sell_rsi': 70, 'desc': '중변동성'},
+    # QQQ 추가
+    'C': {'stocks': ['AAPL', 'MSFT', 'QQQ'], 'buy_rsi': 35, 'sell_rsi': 75, 'desc': '저변동성'}
 }
 
 ALL_STOCKS: List[str] = []
@@ -408,8 +411,9 @@ def analyze_stock(
             result['signal'] = "관망 (Support)"
             result['signal_type'] = "SUPPORT_WAIT"
         elif step2_pass:
-            result['signal'] = "🚀 강력 매수 (STRONG BUY)"
-            result['signal_type'] = "STRONG BUY"
+            # 🚀 "강력 매수" -> "기술적 패턴 포착"으로 변경 (법적 안전장치)
+            result['signal'] = "📊 기술적 패턴 포착 (Technical Pattern)"
+            result['signal_type'] = "TECHNICAL_PATTERN"
         elif current_rsi > group_info['sell_rsi']:
             result['signal'] = "매도 (SELL)"
             result['signal_type'] = "SELL"
@@ -445,7 +449,10 @@ async def send_telegram_report(
     msg += f"📅 {datetime.now().strftime('%Y-%m-%d %H:%M')}\n\n"
     
     if strong_buy_list:
-        msg += f"🚀 <b>강력 매수 신호 ({len(strong_buy_list)}개)</b>\n\n"
+        # ✅ 메시지 헤더 변경
+        msg += f"📊 <b>Technical Pattern Alert ({len(strong_buy_list)}개)</b>\n"
+        msg += f"⚠️ <i>Educational Purpose Only</i>\n\n"
+        
         for item in strong_buy_list:
             msg += f"━━━━━━━━━━━━━━━━━\n"
             msg += f"• <b>{item['ticker']}</b> (${item['price']:.2f})\n"
@@ -461,6 +468,8 @@ async def send_telegram_report(
                 sup = details['support']
                 if sup['nearest_support']:
                     msg += f"  📍 지지선: ${sup['nearest_support']:.2f} ({sup['distance_pct']:.1f}%)\n"
+            
+            msg += f"  ✅ <b>5중 필터 패턴 확인</b>\n\n"
     else:
         msg += "📭 <b>강력 매수 신호 없음</b>\n\n"
         msg += "━━━━━━━━━━━━━━━━━\n"
@@ -528,7 +537,7 @@ def main() -> None:
                     result['filters']
                 )
             
-            if "STRONG BUY" in result['signal_type']:
+            if "TECHNICAL_PATTERN" in result['signal_type']:
                 strong_buy_list.append(result)
 
     # 5. Telegram Notification
