@@ -1,6 +1,6 @@
 """
-M7 Core Filters Module
-Support/Resistance and Volume Profile Analysis
+M7 Core Analysis Module
+Technical analysis filters and indicators.
 """
 
 from .filters import SrVolumeFilter

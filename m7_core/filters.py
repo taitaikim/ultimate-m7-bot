@@ -1,148 +1,127 @@
-import pandas as pd
-import numpy as np
-from scipy.signal import argrelextrema
+"""
+M7 Core - Technical Filters
+Advanced technical analysis filters including Support/Resistance detection.
+"""
 
+import numpy as np
+import pandas as pd
+from scipy.signal import argrelextrema
+from typing import Dict, List, Optional, Any, Union
 
 class SrVolumeFilter:
     """
-    지지/저항선 및 볼륨 프로파일 기반 필터
-    Scipy를 사용한 Local Extrema 분석
+    지지/저항선 및 볼륨 프로파일 기반 필터링 클래스
+    
+    Attributes:
+        df (pd.DataFrame): 종가('Close')가 포함된 데이터프레임
+        order (int): 극값 탐지 범위 (기본값: 5)
+        support_levels (List[float]): 계산된 지지선 리스트
+        resistance_levels (List[float]): 계산된 저항선 리스트
     """
     
-    def __init__(self, df, order=5):
+    def __init__(self, df: pd.DataFrame, order: int = 5) -> None:
         """
         Args:
-            df: 가격 데이터프레임 (Close 컬럼 필요)
-            order: 극값 탐지 범위 (기본 5일)
+            df (pd.DataFrame): 주가 데이터 (반드시 'Close' 컬럼 포함)
+            order (int): 지역 극값(Local Extrema) 탐색 범위
         """
         self.df = df
         self.order = order
-        self.support_levels = []
-        self.resistance_levels = []
+        self.support_levels: List[float] = []
+        self.resistance_levels: List[float] = []
         
-    def calculate_support_resistance(self):
+        # 객체 생성과 동시에 레벨 계산 수행
+        self._calculate_levels()
+        
+    def _calculate_levels(self) -> None:
         """
-        지지선/저항선 계산 (Local Extrema 방식)
-        
-        Returns:
-            dict: {'support': [prices], 'resistance': [prices]}
+        내부 메서드: 지지선과 저항선을 계산하여 리스트에 저장
+        **중요: 최근 120일(약 6개월) 데이터만 유효한 지지/저항선으로 인정**
         """
-        try:
-            # Local minima (지지선)
-            local_min_idx = argrelextrema(self.df['Close'].values, np.less, order=self.order)[0]
-            support_levels = self.df['Close'].iloc[local_min_idx].values
+        if 'Close' not in self.df.columns or self.df.empty:
+            return
             
-            # Local maxima (저항선)
-            local_max_idx = argrelextrema(self.df['Close'].values, np.greater, order=self.order)[0]
-            resistance_levels = self.df['Close'].iloc[local_max_idx].values
-            
-            # 최근 6개월 데이터만 사용 (더 관련성 높음)
-            recent_cutoff = len(self.df) - 120  # 약 6개월
-            self.support_levels = [s for i, s in zip(local_min_idx, support_levels) if i > recent_cutoff]
-            self.resistance_levels = [r for i, r in zip(local_max_idx, resistance_levels) if i > recent_cutoff]
-            
-            return {
-                'support': sorted(self.support_levels),
-                'resistance': sorted(self.resistance_levels, reverse=True)
-            }
-        except Exception as e:
-            print(f"  ⚠️ 지지/저항선 계산 실패: {e}")
-            return {'support': [], 'resistance': []}
-    
-    def find_nearest_support(self, current_price):
+        # 1. scipy를 이용한 극값 탐지
+        # Local Minima (지지선 후보)
+        support_idx = argrelextrema(
+            self.df['Close'].values, 
+            np.less, 
+            order=self.order
+        )[0]
+        
+        # Local Maxima (저항선 후보)
+        resistance_idx = argrelextrema(
+            self.df['Close'].values, 
+            np.greater, 
+            order=self.order
+        )[0]
+        
+        # 2. 최근 데이터 필터링 (질문자님의 핵심 로직 유지!)
+        # 데이터가 충분하다면 최근 120일(약 6개월) 이전의 지지선은 무시함
+        data_len = len(self.df)
+        cutoff_idx = data_len - 120 if data_len > 120 else 0
+        
+        self.support_levels = [
+            float(self.df['Close'].iloc[i]) 
+            for i in support_idx if i >= cutoff_idx
+        ]
+        
+        self.resistance_levels = [
+            float(self.df['Close'].iloc[i]) 
+            for i in resistance_idx if i >= cutoff_idx
+        ]
+        
+    def find_nearest_support(self, current_price: float) -> Optional[float]:
         """
-        현재가 아래의 가장 가까운 지지선 찾기
-        
-        Args:
-            current_price: 현재 주가
-        
-        Returns:
-            float or None: 가장 가까운 지지선 가격
+        현재가 아래에 있는 가장 가까운 지지선을 찾습니다.
         """
         if not self.support_levels:
             return None
-        
+
         # 현재가보다 낮은 지지선만 필터링
-        below_supports = [s for s in self.support_levels if s < current_price]
+        valid_supports = [s for s in self.support_levels if s < current_price]
         
-        if not below_supports:
+        if not valid_supports:
             return None
-        
-        # 가장 가까운 것 선택
-        return max(below_supports)
-    
-    def check_support_proximity(self, current_price, threshold_pct=3.0):
+            
+        # 그 중 가장 큰 값 (현재가와 가장 가까운 값) 반환
+        return max(valid_supports)
+
+    def check_support_proximity(
+        self, 
+        current_price: float, 
+        threshold_pct: float = 3.0
+    ) -> Dict[str, Any]:
         """
-        5차 필터: 지지선 근접도 체크
-        
-        Args:
-            current_price: 현재 주가
-            threshold_pct: 허용 범위 (기본 3%)
+        5차 필터: 현재 주가가 지지선 근처에 있는지 확인
         
         Returns:
-            dict: {'pass': bool, 'distance_pct': float, 'nearest_support': float, 'reason': str}
+            Dict: {pass: bool, reason: str, ...}
         """
-        # 먼저 지지/저항선 계산
-        if not self.support_levels:
-            self.calculate_support_resistance()
-        
         nearest_support = self.find_nearest_support(current_price)
         
         if nearest_support is None:
+            # 지지선이 없으면(신고가 영역 등) 통과로 간주하되 로그 남김
             return {
-                'pass': True,  # 지지선 없으면 통과 (데이터 부족)
-                'distance_pct': None,
+                'pass': True,
                 'nearest_support': None,
-                'reason': '지지선 데이터 없음 (기본 통과)'
+                'distance_pct': 0.0,
+                'reason': "지지선 없음 (신고가 영역/데이터 부족)"
             }
-        
-        # 현재가와 지지선 사이 거리 (%)
+            
         distance_pct = ((current_price - nearest_support) / nearest_support) * 100
         
         if distance_pct <= threshold_pct:
             return {
                 'pass': True,
+                'nearest_support': nearest_support,
                 'distance_pct': round(distance_pct, 2),
-                'nearest_support': round(nearest_support, 2),
-                'reason': f'지지선 근접 ({distance_pct:.1f}% 이내)'
+                'reason': f"지지선 근접 ({distance_pct:.1f}%)"
             }
         else:
             return {
                 'pass': False,
+                'nearest_support': nearest_support,
                 'distance_pct': round(distance_pct, 2),
-                'nearest_support': round(nearest_support, 2),
-                'reason': f'지지선에서 멀리 떨어짐 ({distance_pct:.1f}%)'
+                'reason': f"지지선과 이격 과다 ({distance_pct:.1f}%)"
             }
-
-
-# 테스트 코드
-if __name__ == "__main__":
-    import yfinance as yf
-    
-    print("📊 SrVolumeFilter 테스트 중...")
-    
-    # 테스트 데이터 다운로드
-    ticker = "AAPL"
-    stock = yf.Ticker(ticker)
-    df = stock.history(period='1y')
-    
-    # 필터 생성
-    sr_filter = SrVolumeFilter(df, order=5)
-    
-    # 지지/저항선 계산
-    levels = sr_filter.calculate_support_resistance()
-    print(f"\n{ticker} 지지선: {levels['support'][:5]}")  # 상위 5개만 표시
-    print(f"{ticker} 저항선: {levels['resistance'][:5]}")
-    
-    # 현재가 확인
-    current_price = df['Close'].iloc[-1]
-    print(f"\n현재가: ${current_price:.2f}")
-    
-    # 지지선 근접도 체크
-    result = sr_filter.check_support_proximity(current_price, threshold_pct=3.0)
-    print(f"\n필터 결과: {result}")
-    
-    if result['pass']:
-        print(f"✅ 5차 필터 통과!")
-    else:
-        print(f"❌ 5차 필터 미통과")

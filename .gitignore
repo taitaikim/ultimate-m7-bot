@@ -5,3 +5,4 @@ dist/
 build/
 m7_bot_env/
 .venv/
+.streamlit/secrets.toml
