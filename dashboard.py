@@ -1,6 +1,6 @@
 """
-M7 Bot - Streamlit Dashboard (V2.6 Channel Trading)
-Bollinger Band Channel Strategy
+M7 Bot - Streamlit Dashboard (V2.7 Weekly Channel)
+Weekly Bollinger Band Channel Strategy
 """
 
 import streamlit as st
@@ -73,13 +73,13 @@ def load_signals_data(limit: int = 100) -> pd.DataFrame:
         return pd.DataFrame()
 
 @st.cache_data(ttl=3600)
-def run_technical_backtest(ticker: str, period: str = "6mo"):
+def run_technical_backtest(ticker: str, period: str = "2y"):
     """
-    과거 데이터 기반 기술적 백테스팅 (로직 v2.6: 채널 매매 - 상승채널 전략)
+    과거 데이터 기반 기술적 백테스팅 (로직 v2.7: 주봉 채널 매매 전략)
     """
     try:
-        # auto_adjust=True로 데이터 보정
-        df = yf.download(ticker, period=period, progress=False, auto_adjust=True)
+        # 주봉 데이터로 변경 (interval='1wk')
+        df = yf.download(ticker, period=period, interval='1wk', progress=False, auto_adjust=True)
         
         if df.empty:
             return None, None, None
@@ -88,7 +88,7 @@ def run_technical_backtest(ticker: str, period: str = "6mo"):
         if isinstance(df.columns, pd.MultiIndex):
             df.columns = df.columns.get_level_values(0)
             
-        # 지표 계산: 볼린저 밴드 (20일 이평선 ± 2 표준편차)
+        # 지표 계산: 볼린저 밴드 (20주 이평선 ± 2 표준편차)
         df['MA20'] = df['Close'].rolling(window=20).mean()
         df['STD20'] = df['Close'].rolling(window=20).std()
         df['Upper_Band'] = df['MA20'] + (df['STD20'] * 2)  # 상단 채널
@@ -107,25 +107,25 @@ def run_technical_backtest(ticker: str, period: str = "6mo"):
             upper_band = df['Upper_Band'].iloc[i]
             ma20 = df['MA20'].iloc[i]
             
-            # 🟢 매수 로직: 가격이 하단 채널 근처에 도달 (채널 하단의 ±2% 이내)
-            # 그리고 MA20이 상승 추세일 때 (현재 MA20 > 5일 전 MA20)
-            if not holding and i >= 25:  # 5일 전 데이터 필요
-                lower_threshold = lower_band * 1.02  # 하단 채널 +2%
-                ma20_5days_ago = df['MA20'].iloc[i-5]
+            # 🟢 매수 로직: 가격이 하단 채널 근처에 도달 (채널 하단의 ±3% 이내)
+            # 주봉이므로 여유를 좀 더 줌
+            if not holding and i >= 24:  # 4주 전 데이터 필요
+                lower_threshold = lower_band * 1.03  # 하단 채널 +3%
+                ma20_4weeks_ago = df['MA20'].iloc[i-4]
                 
                 # 채널 하단 근처 + 상승 추세 확인
-                if price <= lower_threshold and ma20 > ma20_5days_ago:
+                if price <= lower_threshold and ma20 > ma20_4weeks_ago:
                     buy_signals.append((df.index[i], price))
                     holding = True
                     entry_price = price
             
             # 🔴 매도 또는 손절 로직
             elif holding:
-                # 1) 이익실현: 가격이 상단 채널 근처 도달 (상단 채널의 -2% 이내)
-                upper_threshold = upper_band * 0.98
+                # 1) 이익실현: 가격이 상단 채널 근처 도달 (상단 채널의 -3% 이내)
+                upper_threshold = upper_band * 0.97
                 
-                # 2) 손절: 가격이 하단 채널을 5% 이상 이탈
-                stop_loss = lower_band * 0.95
+                # 2) 손절: 가격이 하단 채널을 7% 이상 이탈
+                stop_loss = lower_band * 0.93
                 
                 if price >= upper_threshold or price < stop_loss:
                     sell_signals.append((df.index[i], price))
@@ -168,7 +168,7 @@ def plot_backtest_chart(ticker, df, buy_signals, sell_signals):
         ))
 
     fig.update_layout(
-        title=f"📈 {ticker} Channel Trading Strategy (Last 6 Months)",
+        title=f"📈 {ticker} Weekly Channel Strategy (Last 2 Years)",
         xaxis_title="Date",
         yaxis_title="Price ($)",
         template="plotly_white",
@@ -252,7 +252,7 @@ def main() -> None:
     # --- TAB 2: 차트 백테스팅 ---
     with tab2:
         st.subheader("🔍 과거 차트 복기 (Visual Proof)")
-        st.info("💡 볼린저 밴드 채널 전략: 채널 하단에서 매수, 채널 상단에서 매도/채널 이탈 시 손절")
+        st.info("💡 주봉 볼린저 밴드 채널 전략 (2년): 채널 하단에서 매수, 채널 상단에서 매도/채널 이탈 시 손절")
         
         col_sel, col_blank = st.columns([1, 3])
         with col_sel:
@@ -270,7 +270,7 @@ def main() -> None:
                     st.plotly_chart(fig, use_container_width=True)
                     
                     st.markdown(f"""
-                    <div style='display: flex; gap: 20px; justify-content: center; margin-top: 10px;'>
+                    <div style='display: flex; gap:  20px; justify-content: center; margin-top: 10px;'>
                         <div style='background:#e8f5e9; padding:15px 30px; border-radius:10px; border:1px solid #c8e6c9;'>
                             <span style='font-size:1.1em; color:#2e7d32;'>🟢 채널 하단 매수: <b>{len(buys)}회</b></span>
                         </div>
@@ -279,7 +279,7 @@ def main() -> None:
                         </div>
                     </div>
                     <p style='text-align: center; color: gray; font-size: 0.8em; margin-top: 10px;'>
-                        * 볼린저 밴드 기반 채널 매매 (하단 매수 → 상단 매도 또는 손절)
+                        * 주봉 볼린저 밴드(20주) 기반 채널 매매 (하단 매수 → 상단 매도 또는 손절)
                     </p>
                     """, unsafe_allow_html=True)
                 else:
