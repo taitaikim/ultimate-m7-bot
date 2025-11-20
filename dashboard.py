@@ -1,6 +1,6 @@
 """
-M7 Bot - Streamlit Dashboard (V2.7 Weekly Channel)
-Weekly Bollinger Band Channel Strategy
+M7 Bot - Streamlit Dashboard (V2.8 Ichimoku Cloud)
+Weekly Ichimoku Cloud Strategy
 """
 
 import streamlit as st
@@ -75,7 +75,7 @@ def load_signals_data(limit: int = 100) -> pd.DataFrame:
 @st.cache_data(ttl=3600)
 def run_technical_backtest(ticker: str, period: str = "2y"):
     """
-    과거 데이터 기반 기술적 백테스팅 (로직 v2.7: 주봉 채널 매매 전략)
+    과거 데이터 기반 기술적 백테스팅 (로직 v2.8: 일목균형표 전략)
     """
     try:
         # 주봉 데이터로 변경 (interval='1wk')
@@ -88,49 +88,65 @@ def run_technical_backtest(ticker: str, period: str = "2y"):
         if isinstance(df.columns, pd.MultiIndex):
             df.columns = df.columns.get_level_values(0)
             
-        # 지표 계산: 볼린저 밴드 (20주 이평선 ± 2 표준편차)
-        df['MA20'] = df['Close'].rolling(window=20).mean()
-        df['STD20'] = df['Close'].rolling(window=20).std()
-        df['Upper_Band'] = df['MA20'] + (df['STD20'] * 2)  # 상단 채널
-        df['Lower_Band'] = df['MA20'] - (df['STD20'] * 2)  # 하단 채널
+        # 일목균형표 지표 계산
+        high_9 = df['High'].rolling(window=9).max()
+        low_9 = df['Low'].rolling(window=9).min()
+        df['Tenkan_sen'] = (high_9 + low_9) / 2  # 전환선
+        
+        high_26 = df['High'].rolling(window=26).max()
+        low_26 = df['Low'].rolling(window=26).min()
+        df['Kijun_sen'] = (high_26 + low_26) / 2  # 기준선
+        
+        # 선행스팬 A (26일 선행)
+        df['Senkou_span_A'] = ((df['Tenkan_sen'] + df['Kijun_sen']) / 2).shift(26)
+        
+        # 선행스팬 B (26일 선행)
+        high_52 = df['High'].rolling(window=52).max()
+        low_52 = df['Low'].rolling(window=52).min()
+        df['Senkou_span_B'] = ((high_52 + low_52) / 2).shift(26)
         
         buy_signals = []
         sell_signals = []
         
         # 포지션 보유 상태
         holding = False 
-        entry_price = None
         
-        for i in range(20, len(df)):
+        for i in range(52, len(df)):  # 52주 이후부터 계산
             price = df['Close'].iloc[i]
-            lower_band = df['Lower_Band'].iloc[i]
-            upper_band = df['Upper_Band'].iloc[i]
-            ma20 = df['MA20'].iloc[i]
+            tenkan = df['Tenkan_sen'].iloc[i]
+            kijun = df['Kijun_sen'].iloc[i]
+            senkou_a = df['Senkou_span_A'].iloc[i]
+            senkou_b = df['Senkou_span_B'].iloc[i]
             
-            # 🟢 매수 로직: 가격이 하단 채널 근처에 도달 (채널 하단의 ±3% 이내)
-            # 주봉이므로 여유를 좀 더 줌
-            if not holding and i >= 24:  # 4주 전 데이터 필요
-                lower_threshold = lower_band * 1.03  # 하단 채널 +3%
-                ma20_4weeks_ago = df['MA20'].iloc[i-4]
+            # 구름 상단/하단
+            cloud_top = max(senkou_a, senkou_b)
+            cloud_bottom = min(senkou_a, senkou_b)
+            
+            # 🟢 매수 로직: 
+            # 1) 가격이 구름 위에 있음
+            # 2) 전환선이 기준선 위에 있음 (골든크로스)
+            if not holding and i > 0:
+                prev_tenkan = df['Tenkan_sen'].iloc[i-1]
+                prev_kijun = df['Kijun_sen'].iloc[i-1]
                 
-                # 채널 하단 근처 + 상승 추세 확인
-                if price <= lower_threshold and ma20 > ma20_4weeks_ago:
+                # 전환선이 기준선을 상향 돌파 + 가격이 구름 위
+                if (prev_tenkan <= prev_kijun and tenkan > kijun and 
+                    price > cloud_top):
                     buy_signals.append((df.index[i], price))
                     holding = True
-                    entry_price = price
             
-            # 🔴 매도 또는 손절 로직
+            # 🔴 매도 로직:
+            # 1) 가격이 구름 아래로 떨어짐 OR
+            # 2) 전환선이 기준선 아래로 교차 (데드크로스)
             elif holding:
-                # 1) 이익실현: 가격이 상단 채널 근처 도달 (상단 채널의 -3% 이내)
-                upper_threshold = upper_band * 0.97
+                prev_tenkan = df['Tenkan_sen'].iloc[i-1]
+                prev_kijun = df['Kijun_sen'].iloc[i-1]
                 
-                # 2) 손절: 가격이 하단 채널을 7% 이상 이탈
-                stop_loss = lower_band * 0.93
-                
-                if price >= upper_threshold or price < stop_loss:
+                # 가격이 구름 아래 또는 데드크로스
+                if (price < cloud_bottom or 
+                    (prev_tenkan >= prev_kijun and tenkan < kijun)):
                     sell_signals.append((df.index[i], price))
                     holding = False
-                    entry_price = None
                 
         return df, buy_signals, sell_signals
         
@@ -154,7 +170,7 @@ def plot_backtest_chart(ticker, df, buy_signals, sell_signals):
         buy_dates, buy_prices = zip(*buy_signals)
         fig.add_trace(go.Scatter(
             x=buy_dates, y=buy_prices,
-            mode='markers', name='Channel Bottom Buy',
+            mode='markers', name='Ichimoku Buy Signal',
             marker=dict(symbol='triangle-up', size=12, color='green', line=dict(width=1, color='darkgreen'))
         ))
 
@@ -163,12 +179,12 @@ def plot_backtest_chart(ticker, df, buy_signals, sell_signals):
         sell_dates, sell_prices = zip(*sell_signals)
         fig.add_trace(go.Scatter(
             x=sell_dates, y=sell_prices,
-            mode='markers', name='Channel Top Sell / Stop Loss',
+            mode='markers', name='Ichimoku Sell Signal',
             marker=dict(symbol='triangle-down', size=12, color='red', line=dict(width=1, color='darkred'))
         ))
 
     fig.update_layout(
-        title=f"📈 {ticker} Weekly Channel Strategy (Last 2 Years)",
+        title=f"📈 {ticker} Ichimoku Cloud Strategy (Last 2 Years)",
         xaxis_title="Date",
         yaxis_title="Price ($)",
         template="plotly_white",
@@ -252,7 +268,7 @@ def main() -> None:
     # --- TAB 2: 차트 백테스팅 ---
     with tab2:
         st.subheader("🔍 과거 차트 복기 (Visual Proof)")
-        st.info("💡 주봉 볼린저 밴드 채널 전략 (2년): 채널 하단에서 매수, 채널 상단에서 매도/채널 이탈 시 손절")
+        st.info("💡 일목균형표 전략 (주봉, 2년): 구름 돌파 + 전환선/기준선 교차로 매매")
         
         col_sel, col_blank = st.columns([1, 3])
         with col_sel:
@@ -270,16 +286,16 @@ def main() -> None:
                     st.plotly_chart(fig, use_container_width=True)
                     
                     st.markdown(f"""
-                    <div style='display: flex; gap:  20px; justify-content: center; margin-top: 10px;'>
+                    <div style='display: flex; gap: 20px; justify-content: center; margin-top: 10px;'>
                         <div style='background:#e8f5e9; padding:15px 30px; border-radius:10px; border:1px solid #c8e6c9;'>
-                            <span style='font-size:1.1em; color:#2e7d32;'>🟢 채널 하단 매수: <b>{len(buys)}회</b></span>
+                            <span style='font-size:1.1em; color:#2e7d32;'>🟢 일목 매수: <b>{len(buys)}회</b></span>
                         </div>
                         <div style='background:#ffebee; padding:15px 30px; border-radius:10px; border:1px solid #ffcdd2;'>
-                            <span style='font-size:1.1em; color:#c62828;'>🔴 채널 상단/손절: <b>{len(sells)}회</b></span>
+                            <span style='font-size:1.1em; color:#c62828;'>🔴 일목 매도: <b>{len(sells)}회</b></span>
                         </div>
                     </div>
                     <p style='text-align: center; color: gray; font-size: 0.8em; margin-top: 10px;'>
-                        * 주봉 볼린저 밴드(20주) 기반 채널 매매 (하단 매수 → 상단 매도 또는 손절)
+                        * 일목균형표: 전환선/기준선 교차 + 구름 돌파 신호
                     </p>
                     """, unsafe_allow_html=True)
                 else:
