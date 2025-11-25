@@ -6,3 +6,7 @@ build/
 m7_bot_env/
 .venv/
 .streamlit/secrets.toml
+
+# Portfolio data (personal information)
+data/portfolio.csv
+data/portfolio_backup_*.csv

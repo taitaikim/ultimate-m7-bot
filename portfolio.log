@@ -1,0 +1,1236 @@
+2025-11-23 22:54:56,794 - INFO - ✅ portfolio.csv created
+2025-11-23 22:55:33,121 - INFO - ✅ Portfolio saved (2 positions)
+2025-11-23 23:19:14,508 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:19:16,754 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:19:18,869 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:19:21,066 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:19:22,958 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:19:24,861 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:19:27,111 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:19:29,324 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:25:35,277 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:25:37,802 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:25:40,203 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:25:42,249 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:25:44,497 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:25:46,596 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:25:48,504 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:25:50,726 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:27:21,650 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:27:23,748 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:27:25,916 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:27:28,140 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:27:29,964 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:27:31,606 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:27:33,474 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:27:35,814 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:29:08,832 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:29:11,101 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:29:12,993 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:29:14,812 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:29:16,198 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:29:18,097 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:29:19,886 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:29:22,085 - ERROR - Vision Analysis Error: 404 models/gemini-1.5-flash-latest is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-11-23 23:31:48,645 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:31:58,388 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:32:08,483 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:32:15,296 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:32:23,334 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:32:32,236 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:32:39,495 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:32:51,234 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:35:47,251 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:35:49,280 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:35:50,599 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:35:51,715 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:35:55,071 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:35:56,609 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:35:59,324 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:36:01,570 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:41:40,308 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:41:43,631 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:41:43,931 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:41:44,679 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:41:49,527 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:41:51,895 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:41:54,997 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:41:57,567 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:42:24,684 - INFO - ✅ Portfolio saved (1 positions)
+2025-11-23 23:42:37,231 - INFO - ✅ Portfolio saved (0 positions)
+2025-11-23 23:42:52,499 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:42:54,332 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:42:56,382 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:42:57,130 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:42:57,820 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-11-23 23:42:57,823 - INFO - Retrying request to /chat/completions in 0.281000 seconds
+2025-11-23 23:42:59,667 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:42:59,722 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:42:59,817 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-11-23 23:42:59,819 - INFO - Retrying request to /chat/completions in 0.281000 seconds
+2025-11-23 23:43:00,093 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-11-23 23:43:00,095 - INFO - Retrying request to /chat/completions in 0.281000 seconds
+2025-11-23 23:43:01,855 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-11-23 23:43:01,860 - ERROR - GPT-4 Vision Analysis Error: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-e8WID2em0t86GEVXhAgQOjCd on tokens per min (TPM): Limit 200000, Used 200000, Requested 938. Please try again in 281ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2025-11-23 23:43:06,285 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-11-23 23:43:06,287 - INFO - Retrying request to /chat/completions in 0.281000 seconds
+2025-11-23 23:43:12,163 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-11-23 23:43:12,163 - ERROR - GPT-4 Vision Analysis Error: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-e8WID2em0t86GEVXhAgQOjCd on tokens per min (TPM): Limit 200000, Used 200000, Requested 938. Please try again in 281ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2025-11-23 23:46:01,938 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:46:02,782 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:46:06,975 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:46:08,444 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:46:08,691 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:46:10,395 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-11-23 23:46:10,408 - INFO - Retrying request to /chat/completions in 0.281000 seconds
+2025-11-23 23:46:10,613 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-11-23 23:46:10,615 - INFO - Retrying request to /chat/completions in 0.281000 seconds
+2025-11-23 23:46:12,333 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-11-23 23:46:12,334 - INFO - Retrying request to /chat/completions in 0.281000 seconds
+2025-11-23 23:46:13,592 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-11-23 23:46:13,593 - INFO - Retrying request to /chat/completions in 0.281000 seconds
+2025-11-23 23:46:13,899 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-11-23 23:46:13,899 - INFO - Retrying request to /chat/completions in 0.281000 seconds
+2025-11-23 23:46:20,965 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:46:21,327 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:46:21,343 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:50:15,748 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:50:16,761 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:50:17,001 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:50:21,940 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:50:22,003 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:50:23,664 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:50:25,579 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-11-23 23:50:25,581 - INFO - Retrying request to /chat/completions in 0.281000 seconds
+2025-11-23 23:50:25,879 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-11-23 23:50:25,881 - INFO - Retrying request to /chat/completions in 0.281000 seconds
+2025-11-23 23:50:27,533 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-11-23 23:50:27,535 - INFO - Retrying request to /chat/completions in 0.281000 seconds
+2025-11-23 23:50:27,920 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-11-23 23:50:27,923 - INFO - Retrying request to /chat/completions in 0.281000 seconds
+2025-11-23 23:50:29,481 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-11-23 23:50:29,481 - ERROR - GPT-4 Vision Analysis Error: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-e8WID2em0t86GEVXhAgQOjCd on tokens per min (TPM): Limit 200000, Used 200000, Requested 938. Please try again in 281ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2025-11-23 23:50:29,823 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-11-23 23:50:29,829 - ERROR - GPT-4 Vision Analysis Error: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-e8WID2em0t86GEVXhAgQOjCd on tokens per min (TPM): Limit 200000, Used 200000, Requested 938. Please try again in 281ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2025-11-23 23:53:24,523 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:53:26,545 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:53:29,355 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:53:30,546 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:53:33,363 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:53:34,323 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-11-23 23:53:34,323 - INFO - Retrying request to /chat/completions in 0.281000 seconds
+2025-11-23 23:53:36,432 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-11-23 23:53:36,432 - INFO - Retrying request to /chat/completions in 0.281000 seconds
+2025-11-23 23:53:38,016 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:53:39,646 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-11-23 23:53:39,646 - INFO - Retrying request to /chat/completions in 0.281000 seconds
+2025-11-23 23:53:44,708 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:53:45,443 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-11-23 23:53:45,443 - INFO - Retrying request to /chat/completions in 0.281000 seconds
+2025-11-23 23:53:51,714 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-11-23 23:53:51,714 - ERROR - GPT-4 Vision Analysis Error: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o-mini in organization org-e8WID2em0t86GEVXhAgQOjCd on tokens per min (TPM): Limit 200000, Used 200000, Requested 938. Please try again in 281ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+2025-11-23 23:59:20,646 - INFO - ✅ Portfolio saved (2 positions)
+2025-11-23 23:59:58,047 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:59:59,356 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-23 23:59:59,926 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:00:08,681 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:00:10,639 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:00:12,342 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:00:20,308 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:00:21,938 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:04:01,131 - INFO - ✅ Portfolio saved (1 positions)
+2025-11-24 00:04:17,702 - INFO - ✅ Portfolio saved (0 positions)
+2025-11-24 00:04:36,175 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:04:38,241 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:04:38,345 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:04:43,676 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:04:46,136 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:04:50,114 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:04:56,029 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:04:56,474 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:09:47,025 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:09:48,937 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:09:51,389 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:09:56,243 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:09:59,458 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:10:01,100 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:10:06,610 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:10:10,725 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:14:23,500 - INFO - ➕ 포스코DX added: 1 shares @$24361.00
+2025-11-24 00:14:23,504 - INFO - ➕ 블랙야크아이앤씨 added: 1 shares @$3755.00
+2025-11-24 00:14:23,508 - INFO - ➕ SGOV added: 70 shares @$10319879.00
+2025-11-24 00:14:23,512 - INFO - ➕ XLV added: 25 shares @$5664502.00
+2025-11-24 00:14:23,516 - INFO - ➕ GLD added: 10 shares @$5485006.00
+2025-11-24 00:14:23,522 - INFO - ➕ TLT added: 30 shares @$3934818.00
+2025-11-24 00:14:23,526 - INFO - ➕ BULZ added: 4 shares @$1236624.00
+2025-11-24 00:14:23,530 - INFO - ➕ 넥스트에라 에너지 added: 10 shares @$1223356.00
+2025-11-24 00:14:23,540 - INFO - ➕ MSTU added: 181 shares @$298876.00
+2025-11-24 00:14:23,543 - INFO - ➕ SOLT added: 24 shares @$253990.00
+2025-11-24 00:14:23,545 - INFO - ➕ 모더나 added: 7 shares @$242727.00
+2025-11-24 00:14:23,552 - INFO - ➕ 리얼티 인컴 added: 2 shares @$178141.00
+2025-11-24 00:14:23,557 - INFO - ➕ 골드 필즈(ADR) added: 3 shares @$169053.00
+2025-11-24 00:14:23,559 - INFO - ➕ 애플 added: 1 shares @$145064.00
+2025-11-24 00:14:23,563 - INFO - 📝 골드 필즈(ADR) updated: 3→6 shares, avg $169053.00
+2025-11-24 00:14:23,568 - INFO - ➕ 바이오엔테크(ADR) added: 1 shares @$140064.00
+2025-11-24 00:14:23,571 - INFO - ➕ ETHU added: 1 shares @$134666.00
+2025-11-24 00:14:23,575 - INFO - ➕ 피트니 보우스 added: 8 shares @$126362.00
+2025-11-24 00:14:23,582 - INFO - ➕ 아이온큐 added: 1 shares @$71995.00
+2025-11-24 00:14:23,590 - INFO - ➕ 리프트 added: 1 shares @$29002.00
+2025-11-24 00:14:23,604 - INFO - ➕ 버 바이오테크놀로지 added: 1 shares @$8332.00
+2025-11-24 00:14:23,607 - INFO - ➕ AGM 그룹 홀딩스 added: 2 shares @$8230.00
+2025-11-24 00:14:23,612 - INFO - ➕ 게티 이미지 홀딩스 added: 1 shares @$2215.00
+2025-11-24 00:14:23,618 - INFO - ✅ Portfolio saved (22 positions)
+2025-11-24 00:14:27,612 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: 포스코DX"}}}
+2025-11-24 00:14:28,475 - ERROR - 
+1 Failed download:
+2025-11-24 00:14:28,475 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:14:29,949 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: 블랙야크아이앤씨"}}}
+2025-11-24 00:14:30,799 - ERROR - 
+1 Failed download:
+2025-11-24 00:14:30,799 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:14:34,949 - ERROR - 
+2 Failed downloads:
+2025-11-24 00:14:34,950 - ERROR - ['에너지', '넥스트에라']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:14:37,425 - ERROR - 
+1 Failed download:
+2025-11-24 00:14:37,425 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:14:38,906 - ERROR - 
+2 Failed downloads:
+2025-11-24 00:14:38,906 - ERROR - ['리얼티', '인컴']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:14:40,381 - ERROR - 
+2 Failed downloads:
+2025-11-24 00:14:40,381 - ERROR - ['필즈(ADR)', '골드']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:14:41,890 - ERROR - 
+1 Failed download:
+2025-11-24 00:14:41,891 - ERROR - ['애플']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:14:43,399 - ERROR - 
+1 Failed download:
+2025-11-24 00:14:43,399 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:14:45,419 - ERROR - 
+2 Failed downloads:
+2025-11-24 00:14:45,419 - ERROR - ['피트니', '보우스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:14:46,895 - ERROR - 
+1 Failed download:
+2025-11-24 00:14:46,895 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:14:48,412 - ERROR - 
+1 Failed download:
+2025-11-24 00:14:48,413 - ERROR - ['리프트']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:14:50,004 - ERROR - 
+2 Failed downloads:
+2025-11-24 00:14:50,004 - ERROR - ['버', '바이오테크놀로지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:14:51,605 - ERROR - 
+2 Failed downloads:
+2025-11-24 00:14:51,605 - ERROR - ['홀딩스', '그룹']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:14:51,621 - ERROR - ✗ AGM 그룹 홀딩스: Cannot set a DataFrame with multiple columns to the single column RSI
+2025-11-24 00:14:53,133 - ERROR - 
+3 Failed downloads:
+2025-11-24 00:14:53,133 - ERROR - ['홀딩스', '게티', '이미지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:18:21,691 - INFO - ✅ Portfolio saved (21 positions)
+2025-11-24 00:18:23,545 - ERROR - 
+1 Failed download:
+2025-11-24 00:18:23,545 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:18:26,152 - ERROR - 
+2 Failed downloads:
+2025-11-24 00:18:26,152 - ERROR - ['넥스트에라', '에너지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:18:27,563 - ERROR - 
+1 Failed download:
+2025-11-24 00:18:27,563 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:18:28,448 - ERROR - 
+2 Failed downloads:
+2025-11-24 00:18:28,453 - ERROR - ['리얼티', '인컴']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:18:29,216 - ERROR - 
+2 Failed downloads:
+2025-11-24 00:18:29,216 - ERROR - ['필즈(ADR)', '골드']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:18:30,121 - ERROR - 
+1 Failed download:
+2025-11-24 00:18:30,121 - ERROR - ['애플']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:18:30,866 - ERROR - 
+1 Failed download:
+2025-11-24 00:18:30,866 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:18:32,136 - ERROR - 
+2 Failed downloads:
+2025-11-24 00:18:32,138 - ERROR - ['피트니', '보우스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:18:33,100 - ERROR - 
+1 Failed download:
+2025-11-24 00:18:33,104 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:18:34,487 - ERROR - 
+1 Failed download:
+2025-11-24 00:18:34,487 - ERROR - ['리프트']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:18:35,398 - ERROR - 
+2 Failed downloads:
+2025-11-24 00:18:35,398 - ERROR - ['바이오테크놀로지', '버']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:18:36,371 - ERROR - 
+2 Failed downloads:
+2025-11-24 00:18:36,371 - ERROR - ['홀딩스', '그룹']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:18:36,378 - ERROR - ✗ AGM 그룹 홀딩스: Cannot set a DataFrame with multiple columns to the single column RSI
+2025-11-24 00:18:37,126 - ERROR - 
+3 Failed downloads:
+2025-11-24 00:18:37,126 - ERROR - ['홀딩스', '이미지', '게티']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:20:26,625 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:20:27,403 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:20:31,007 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:20:33,964 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:20:37,545 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:20:41,073 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:20:44,202 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:20:44,748 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-24 00:21:32,253 - INFO - ➕ 케이엠 added: 105 shares @$391464.00
+2025-11-24 00:21:32,261 - INFO - ➕ 에코프로비엠 added: 1 shares @$137753.00
+2025-11-24 00:21:32,261 - INFO - ➕ 포스코DX added: 1 shares @$24361.00
+2025-11-24 00:21:32,261 - INFO - ➕ 블랙야크아이앤씨 added: 1 shares @$3755.00
+2025-11-24 00:21:32,271 - INFO - 📝 포스코DX updated: 1→2 shares, avg $24361.00
+2025-11-24 00:21:32,274 - INFO - 📝 블랙야크아이앤씨 updated: 1→2 shares, avg $3755.00
+2025-11-24 00:21:32,276 - INFO - ➕ SGOV added: 70 shares @$10319879.00
+2025-11-24 00:21:32,278 - INFO - ➕ XLV added: 25 shares @$5664502.00
+2025-11-24 00:21:32,281 - INFO - ➕ GLD added: 10 shares @$5485006.00
+2025-11-24 00:21:32,283 - INFO - ➕ TLT added: 30 shares @$3934818.00
+2025-11-24 00:21:32,286 - INFO - ➕ BULZ added: 4 shares @$1236624.00
+2025-11-24 00:21:32,289 - INFO - ➕ 넥스트에라 에너지 added: 10 shares @$1223356.00
+2025-11-24 00:21:32,290 - INFO - 📝 넥스트에라 에너지 updated: 10→20 shares, avg $1223356.00
+2025-11-24 00:21:32,293 - INFO - ➕ QDTE added: 10 shares @$494939.00
+2025-11-24 00:21:32,296 - INFO - ➕ TQQQ added: 7 shares @$487022.00
+2025-11-24 00:21:32,298 - INFO - ➕ 코인베이스 added: 1 shares @$352137.00
+2025-11-24 00:21:32,301 - INFO - ➕ MSTU added: 181 shares @$298876.00
+2025-11-24 00:21:32,304 - INFO - ➕ SOLT added: 24 shares @$253990.00
+2025-11-24 00:21:32,305 - INFO - ➕ 모더나 added: 7 shares @$242727.00
+2025-11-24 00:21:32,308 - INFO - ➕ 골드 필즈(ADR) added: 3 shares @$169053.00
+2025-11-24 00:21:32,309 - INFO - 📝 골드 필즈(ADR) updated: 3→6 shares, avg $169053.00
+2025-11-24 00:21:32,313 - INFO - ➕ 바이오엔테크(ADR) added: 1 shares @$140064.00
+2025-11-24 00:21:32,318 - INFO - ➕ 아이온큐 added: 1 shares @$71995.00
+2025-11-24 00:21:32,323 - INFO - ➕ 리프트 added: 1 shares @$29002.00
+2025-11-24 00:21:32,328 - INFO - ➕ 버 바이오테크놀로지 added: 1 shares @$8332.00
+2025-11-24 00:21:32,331 - INFO - ➕ AGM 그룹 홀딩스 added: 2 shares @$8230.00
+2025-11-24 00:21:32,333 - INFO - ➕ 게티 이미지 홀딩스 added: 1 shares @$2215.00
+2025-11-24 00:21:32,337 - INFO - ✅ Portfolio saved (23 positions)
+2025-11-24 00:21:36,370 - ERROR - 
+1 Failed download:
+2025-11-24 00:21:36,372 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:21:38,047 - ERROR - 
+1 Failed download:
+2025-11-24 00:21:38,047 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:21:39,046 - ERROR - 
+1 Failed download:
+2025-11-24 00:21:39,046 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:21:39,878 - ERROR - 
+1 Failed download:
+2025-11-24 00:21:39,878 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:21:42,547 - ERROR - 
+2 Failed downloads:
+2025-11-24 00:21:42,549 - ERROR - ['넥스트에라', '에너지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:21:44,899 - ERROR - 
+1 Failed download:
+2025-11-24 00:21:44,900 - ERROR - ['코인베이스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:21:46,414 - ERROR - 
+1 Failed download:
+2025-11-24 00:21:46,414 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:21:47,316 - ERROR - 
+2 Failed downloads:
+2025-11-24 00:21:47,316 - ERROR - ['필즈(ADR)', '골드']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:21:48,067 - ERROR - 
+1 Failed download:
+2025-11-24 00:21:48,067 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:21:48,992 - ERROR - 
+1 Failed download:
+2025-11-24 00:21:48,993 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:21:49,857 - ERROR - 
+1 Failed download:
+2025-11-24 00:21:49,859 - ERROR - ['리프트']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:21:50,761 - ERROR - 
+2 Failed downloads:
+2025-11-24 00:21:50,762 - ERROR - ['버', '바이오테크놀로지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:21:51,515 - ERROR - 
+2 Failed downloads:
+2025-11-24 00:21:51,515 - ERROR - ['그룹', '홀딩스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-24 00:21:51,531 - ERROR - ✗ AGM 그룹 홀딩스: Cannot set a DataFrame with multiple columns to the single column RSI
+2025-11-24 00:21:52,436 - ERROR - 
+3 Failed downloads:
+2025-11-24 00:21:52,436 - ERROR - ['이미지', '홀딩스', '게티']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 21:33:03,675 - ERROR - 
+1 Failed download:
+2025-11-25 21:33:03,675 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 21:33:04,634 - ERROR - 
+1 Failed download:
+2025-11-25 21:33:04,636 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 21:33:05,508 - ERROR - 
+1 Failed download:
+2025-11-25 21:33:05,509 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 21:33:06,429 - ERROR - 
+1 Failed download:
+2025-11-25 21:33:06,431 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 21:33:08,958 - ERROR - 
+2 Failed downloads:
+2025-11-25 21:33:08,960 - ERROR - ['에너지', '넥스트에라']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 21:33:10,561 - ERROR - 
+1 Failed download:
+2025-11-25 21:33:10,561 - ERROR - ['코인베이스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 21:33:12,010 - ERROR - 
+1 Failed download:
+2025-11-25 21:33:12,010 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 21:33:12,953 - ERROR - 
+2 Failed downloads:
+2025-11-25 21:33:12,953 - ERROR - ['필즈(ADR)', '골드']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 21:33:13,715 - ERROR - 
+1 Failed download:
+2025-11-25 21:33:13,715 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 21:33:14,682 - ERROR - 
+1 Failed download:
+2025-11-25 21:33:14,683 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 21:33:15,436 - ERROR - 
+1 Failed download:
+2025-11-25 21:33:15,437 - ERROR - ['리프트']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 21:33:16,358 - ERROR - 
+2 Failed downloads:
+2025-11-25 21:33:16,358 - ERROR - ['바이오테크놀로지', '버']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 21:33:17,123 - ERROR - 
+2 Failed downloads:
+2025-11-25 21:33:17,125 - ERROR - ['홀딩스', '그룹']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 21:33:17,137 - ERROR - ✗ AGM 그룹 홀딩스: Cannot set a DataFrame with multiple columns to the single column RSI
+2025-11-25 21:33:18,061 - ERROR - 
+3 Failed downloads:
+2025-11-25 21:33:18,062 - ERROR - ['이미지', '게티', '홀딩스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:52:55,534 - ERROR - 
+1 Failed download:
+2025-11-25 22:52:55,534 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:52:56,610 - ERROR - 
+1 Failed download:
+2025-11-25 22:52:56,610 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:52:57,517 - ERROR - 
+1 Failed download:
+2025-11-25 22:52:57,517 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:52:58,857 - ERROR - 
+1 Failed download:
+2025-11-25 22:52:58,857 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:53:01,393 - ERROR - 
+2 Failed downloads:
+2025-11-25 22:53:01,394 - ERROR - ['에너지', '넥스트에라']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:53:03,005 - ERROR - 
+1 Failed download:
+2025-11-25 22:53:03,005 - ERROR - ['코인베이스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:53:04,427 - ERROR - 
+1 Failed download:
+2025-11-25 22:53:04,427 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:53:05,336 - ERROR - 
+2 Failed downloads:
+2025-11-25 22:53:05,336 - ERROR - ['필즈(ADR)', '골드']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:53:06,086 - ERROR - 
+1 Failed download:
+2025-11-25 22:53:06,086 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:53:07,084 - ERROR - 
+1 Failed download:
+2025-11-25 22:53:07,085 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:53:07,882 - ERROR - 
+1 Failed download:
+2025-11-25 22:53:07,882 - ERROR - ['리프트']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:53:08,779 - ERROR - 
+2 Failed downloads:
+2025-11-25 22:53:08,779 - ERROR - ['바이오테크놀로지', '버']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:53:09,531 - ERROR - 
+2 Failed downloads:
+2025-11-25 22:53:09,532 - ERROR - ['그룹', '홀딩스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:53:09,539 - ERROR - ✗ AGM 그룹 홀딩스: Cannot set a DataFrame with multiple columns to the single column RSI
+2025-11-25 22:53:10,536 - ERROR - 
+3 Failed downloads:
+2025-11-25 22:53:10,536 - ERROR - ['이미지', '게티', '홀딩스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:58:33,998 - ERROR - 
+1 Failed download:
+2025-11-25 22:58:33,998 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:58:34,930 - ERROR - 
+1 Failed download:
+2025-11-25 22:58:34,930 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:58:35,664 - ERROR - 
+1 Failed download:
+2025-11-25 22:58:35,664 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:58:36,627 - ERROR - 
+1 Failed download:
+2025-11-25 22:58:36,628 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:58:39,194 - ERROR - 
+2 Failed downloads:
+2025-11-25 22:58:39,194 - ERROR - ['에너지', '넥스트에라']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:58:40,783 - ERROR - 
+1 Failed download:
+2025-11-25 22:58:40,783 - ERROR - ['코인베이스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:58:42,201 - ERROR - 
+1 Failed download:
+2025-11-25 22:58:42,202 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:58:43,109 - ERROR - 
+2 Failed downloads:
+2025-11-25 22:58:43,110 - ERROR - ['골드', '필즈(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:58:43,905 - ERROR - 
+1 Failed download:
+2025-11-25 22:58:43,906 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:58:44,818 - ERROR - 
+1 Failed download:
+2025-11-25 22:58:44,818 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:58:45,571 - ERROR - 
+1 Failed download:
+2025-11-25 22:58:45,571 - ERROR - ['리프트']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:58:46,479 - ERROR - 
+2 Failed downloads:
+2025-11-25 22:58:46,480 - ERROR - ['바이오테크놀로지', '버']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:58:47,245 - ERROR - 
+2 Failed downloads:
+2025-11-25 22:58:47,245 - ERROR - ['그룹', '홀딩스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 22:58:47,262 - ERROR - ✗ AGM 그룹 홀딩스: Cannot set a DataFrame with multiple columns to the single column RSI
+2025-11-25 22:58:48,253 - ERROR - 
+3 Failed downloads:
+2025-11-25 22:58:48,253 - ERROR - ['이미지', '게티', '홀딩스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:05:45,773 - ERROR - 
+1 Failed download:
+2025-11-25 23:05:45,773 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:05:46,719 - ERROR - 
+1 Failed download:
+2025-11-25 23:05:46,719 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:05:47,639 - ERROR - 
+1 Failed download:
+2025-11-25 23:05:47,639 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:05:48,733 - ERROR - 
+1 Failed download:
+2025-11-25 23:05:48,733 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:05:51,557 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:05:51,557 - ERROR - ['넥스트에라', '에너지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:05:53,138 - ERROR - 
+1 Failed download:
+2025-11-25 23:05:53,138 - ERROR - ['코인베이스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:05:54,552 - ERROR - 
+1 Failed download:
+2025-11-25 23:05:54,552 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:05:55,438 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:05:55,438 - ERROR - ['골드', '필즈(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:05:56,404 - ERROR - 
+1 Failed download:
+2025-11-25 23:05:56,404 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:05:57,529 - ERROR - 
+1 Failed download:
+2025-11-25 23:05:57,529 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:05:58,297 - ERROR - 
+1 Failed download:
+2025-11-25 23:05:58,297 - ERROR - ['리프트']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:05:59,218 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:05:59,218 - ERROR - ['버', '바이오테크놀로지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:05:59,956 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:05:59,957 - ERROR - ['그룹', '홀딩스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:05:59,966 - ERROR - ✗ AGM 그룹 홀딩스: Cannot set a DataFrame with multiple columns to the single column RSI
+2025-11-25 23:06:00,926 - ERROR - 
+3 Failed downloads:
+2025-11-25 23:06:00,927 - ERROR - ['홀딩스', '게티', '이미지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:07,341 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:07,342 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:08,252 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:08,252 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:09,014 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:09,015 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:09,912 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:09,912 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:12,366 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:13:12,366 - ERROR - ['에너지', '넥스트에라']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:13,927 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:13,927 - ERROR - ['코인베이스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:15,331 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:15,331 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:16,261 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:13:16,262 - ERROR - ['골드', '필즈(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:17,131 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:17,131 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:18,026 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:18,027 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:18,596 - ERROR - ✗ 리프트: Cannot set a DataFrame with multiple columns to the single column RSI
+2025-11-25 23:13:20,281 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:20,281 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:20,493 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:20,494 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:22,615 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:22,615 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:23,600 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:23,601 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:24,359 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:24,359 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:24,572 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:24,572 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:25,696 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:25,696 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:25,925 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:25,925 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:27,711 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:27,711 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:27,928 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:27,928 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:29,016 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:29,017 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:29,795 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:29,795 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:30,738 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:30,738 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:30,950 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:30,952 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:31,920 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:31,923 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:32,856 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:32,856 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:33,649 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:33,650 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:34,578 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:34,578 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:37,169 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:13:37,170 - ERROR - ['넥스트에라', '에너지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:38,751 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:38,752 - ERROR - ['코인베이스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:40,193 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:40,193 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:41,195 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:13:41,195 - ERROR - ['골드', '필즈(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:41,968 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:41,968 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:42,892 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:42,892 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:43,691 - ERROR - 
+1 Failed download:
+2025-11-25 23:13:43,692 - ERROR - ['리프트']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:44,603 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:13:44,605 - ERROR - ['바이오테크놀로지', '버']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:45,373 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:13:45,373 - ERROR - ['그룹', '홀딩스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:13:45,388 - ERROR - ✗ AGM 그룹 홀딩스: Cannot set a DataFrame with multiple columns to the single column RSI
+2025-11-25 23:13:46,306 - ERROR - 
+3 Failed downloads:
+2025-11-25 23:13:46,308 - ERROR - ['게티', '이미지', '홀딩스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:22:12,252 - ERROR - 
+1 Failed download:
+2025-11-25 23:22:12,252 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:22:13,215 - ERROR - 
+1 Failed download:
+2025-11-25 23:22:13,215 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:22:13,972 - ERROR - 
+1 Failed download:
+2025-11-25 23:22:13,974 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:22:15,301 - ERROR - 
+1 Failed download:
+2025-11-25 23:22:15,302 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:22:17,783 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:22:17,784 - ERROR - ['에너지', '넥스트에라']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:22:19,383 - ERROR - 
+1 Failed download:
+2025-11-25 23:22:19,383 - ERROR - ['코인베이스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:22:20,835 - ERROR - 
+1 Failed download:
+2025-11-25 23:22:20,835 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:22:21,795 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:22:21,795 - ERROR - ['필즈(ADR)', '골드']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:22:22,534 - ERROR - 
+1 Failed download:
+2025-11-25 23:22:22,534 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:22:23,462 - ERROR - 
+1 Failed download:
+2025-11-25 23:22:23,462 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:22:24,230 - ERROR - 
+1 Failed download:
+2025-11-25 23:22:24,230 - ERROR - ['리프트']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:22:25,134 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:22:25,135 - ERROR - ['버', '바이오테크놀로지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:22:25,927 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:22:25,927 - ERROR - ['홀딩스', '그룹']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:22:25,942 - ERROR - ✗ AGM 그룹 홀딩스: Cannot set a DataFrame with multiple columns to the single column RSI
+2025-11-25 23:22:26,884 - ERROR - 
+3 Failed downloads:
+2025-11-25 23:22:26,884 - ERROR - ['이미지', '홀딩스', '게티']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:29:22,841 - ERROR - 
+1 Failed download:
+2025-11-25 23:29:22,842 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:29:23,772 - ERROR - 
+1 Failed download:
+2025-11-25 23:29:23,772 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:29:24,577 - ERROR - 
+1 Failed download:
+2025-11-25 23:29:24,577 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:29:25,482 - ERROR - 
+1 Failed download:
+2025-11-25 23:29:25,482 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:29:27,950 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:29:27,950 - ERROR - ['넥스트에라', '에너지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:29:29,562 - ERROR - 
+1 Failed download:
+2025-11-25 23:29:29,562 - ERROR - ['코인베이스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:29:31,032 - ERROR - 
+1 Failed download:
+2025-11-25 23:29:31,032 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:29:31,927 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:29:31,927 - ERROR - ['골드', '필즈(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:29:32,687 - ERROR - 
+1 Failed download:
+2025-11-25 23:29:32,687 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:29:33,694 - ERROR - 
+1 Failed download:
+2025-11-25 23:29:33,694 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:29:34,465 - ERROR - 
+1 Failed download:
+2025-11-25 23:29:34,465 - ERROR - ['리프트']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:29:35,368 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:29:35,368 - ERROR - ['바이오테크놀로지', '버']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:29:36,132 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:29:36,132 - ERROR - ['그룹', '홀딩스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:29:36,143 - ERROR - ✗ AGM 그룹 홀딩스: Cannot set a DataFrame with multiple columns to the single column RSI
+2025-11-25 23:29:37,084 - ERROR - 
+3 Failed downloads:
+2025-11-25 23:29:37,084 - ERROR - ['홀딩스', '이미지', '게티']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:34:41,701 - ERROR - 
+1 Failed download:
+2025-11-25 23:34:41,703 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:34:42,622 - ERROR - 
+1 Failed download:
+2025-11-25 23:34:42,622 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:34:43,455 - ERROR - 
+1 Failed download:
+2025-11-25 23:34:43,455 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:34:44,378 - ERROR - 
+1 Failed download:
+2025-11-25 23:34:44,378 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:34:46,967 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:34:46,967 - ERROR - ['넥스트에라', '에너지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:34:48,540 - ERROR - 
+1 Failed download:
+2025-11-25 23:34:48,544 - ERROR - ['코인베이스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:34:49,959 - ERROR - 
+1 Failed download:
+2025-11-25 23:34:49,961 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:34:50,964 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:34:50,965 - ERROR - ['골드', '필즈(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:34:51,819 - ERROR - 
+1 Failed download:
+2025-11-25 23:34:51,819 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:34:52,753 - ERROR - 
+1 Failed download:
+2025-11-25 23:34:52,753 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:34:53,514 - ERROR - 
+1 Failed download:
+2025-11-25 23:34:53,514 - ERROR - ['리프트']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:34:54,482 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:34:54,483 - ERROR - ['버', '바이오테크놀로지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:34:55,561 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:34:55,561 - ERROR - ['그룹', '홀딩스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:34:55,565 - ERROR - ✗ AGM 그룹 홀딩스: Cannot set a DataFrame with multiple columns to the single column RSI
+2025-11-25 23:34:56,652 - ERROR - 
+3 Failed downloads:
+2025-11-25 23:34:56,652 - ERROR - ['이미지', '게티', '홀딩스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:44:43,429 - ERROR - 
+1 Failed download:
+2025-11-25 23:44:43,429 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:44:44,448 - ERROR - 
+1 Failed download:
+2025-11-25 23:44:44,448 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:44:45,201 - ERROR - 
+1 Failed download:
+2025-11-25 23:44:45,201 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:44:46,158 - ERROR - 
+1 Failed download:
+2025-11-25 23:44:46,158 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:44:48,681 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:44:48,681 - ERROR - ['넥스트에라', '에너지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:44:50,735 - ERROR - 
+1 Failed download:
+2025-11-25 23:44:50,735 - ERROR - ['코인베이스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:44:52,266 - ERROR - 
+1 Failed download:
+2025-11-25 23:44:52,266 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:44:53,593 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:44:53,593 - ERROR - ['골드', '필즈(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:44:54,736 - ERROR - 
+1 Failed download:
+2025-11-25 23:44:54,737 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:44:55,649 - ERROR - 
+1 Failed download:
+2025-11-25 23:44:55,649 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:44:56,419 - ERROR - 
+1 Failed download:
+2025-11-25 23:44:56,424 - ERROR - ['리프트']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:44:57,331 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:44:57,332 - ERROR - ['바이오테크놀로지', '버']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:44:58,108 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:44:58,108 - ERROR - ['홀딩스', '그룹']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:44:58,110 - ERROR - ✗ AGM 그룹 홀딩스: Cannot set a DataFrame with multiple columns to the single column RSI
+2025-11-25 23:44:59,335 - ERROR - 
+3 Failed downloads:
+2025-11-25 23:44:59,339 - ERROR - ['이미지', '홀딩스', '게티']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:50:42,845 - ERROR - 
+1 Failed download:
+2025-11-25 23:50:42,846 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:50:43,798 - ERROR - 
+1 Failed download:
+2025-11-25 23:50:43,799 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:50:44,576 - ERROR - 
+1 Failed download:
+2025-11-25 23:50:44,576 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:50:45,521 - ERROR - 
+1 Failed download:
+2025-11-25 23:50:45,522 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:50:48,031 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:50:48,031 - ERROR - ['에너지', '넥스트에라']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:50:49,673 - ERROR - 
+1 Failed download:
+2025-11-25 23:50:49,674 - ERROR - ['코인베이스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:50:51,071 - ERROR - 
+1 Failed download:
+2025-11-25 23:50:51,073 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:50:51,996 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:50:51,996 - ERROR - ['골드', '필즈(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:50:52,767 - ERROR - 
+1 Failed download:
+2025-11-25 23:50:52,769 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:50:53,682 - ERROR - 
+1 Failed download:
+2025-11-25 23:50:53,682 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:50:54,449 - ERROR - 
+1 Failed download:
+2025-11-25 23:50:54,449 - ERROR - ['리프트']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:50:55,412 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:50:55,412 - ERROR - ['버', '바이오테크놀로지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:50:56,400 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:50:56,400 - ERROR - ['그룹', '홀딩스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:50:56,410 - ERROR - ✗ AGM 그룹 홀딩스: Cannot set a DataFrame with multiple columns to the single column RSI
+2025-11-25 23:50:57,767 - ERROR - 
+3 Failed downloads:
+2025-11-25 23:50:57,768 - ERROR - ['이미지', '게티', '홀딩스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:57:05,125 - ERROR - 
+1 Failed download:
+2025-11-25 23:57:05,126 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:57:06,035 - ERROR - 
+1 Failed download:
+2025-11-25 23:57:06,035 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:57:06,903 - ERROR - 
+1 Failed download:
+2025-11-25 23:57:06,904 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:57:07,833 - ERROR - 
+1 Failed download:
+2025-11-25 23:57:07,833 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:57:10,260 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:57:10,262 - ERROR - ['에너지', '넥스트에라']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:57:11,845 - ERROR - 
+1 Failed download:
+2025-11-25 23:57:11,845 - ERROR - ['코인베이스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:57:13,318 - ERROR - 
+1 Failed download:
+2025-11-25 23:57:13,318 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:57:14,254 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:57:14,254 - ERROR - ['필즈(ADR)', '골드']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:57:14,997 - ERROR - 
+1 Failed download:
+2025-11-25 23:57:14,997 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:57:15,909 - ERROR - 
+1 Failed download:
+2025-11-25 23:57:15,910 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:57:16,670 - ERROR - 
+1 Failed download:
+2025-11-25 23:57:16,671 - ERROR - ['리프트']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:57:17,581 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:57:17,583 - ERROR - ['버', '바이오테크놀로지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:57:18,356 - ERROR - 
+2 Failed downloads:
+2025-11-25 23:57:18,357 - ERROR - ['홀딩스', '그룹']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-25 23:57:18,362 - ERROR - ✗ AGM 그룹 홀딩스: Cannot set a DataFrame with multiple columns to the single column RSI
+2025-11-25 23:57:19,271 - ERROR - 
+3 Failed downloads:
+2025-11-25 23:57:19,271 - ERROR - ['게티', '홀딩스', '이미지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:03:29,895 - ERROR - 
+1 Failed download:
+2025-11-26 00:03:29,895 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:03:30,796 - ERROR - 
+1 Failed download:
+2025-11-26 00:03:30,796 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:03:31,550 - ERROR - 
+1 Failed download:
+2025-11-26 00:03:31,550 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:03:32,522 - ERROR - 
+1 Failed download:
+2025-11-26 00:03:32,523 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:03:35,038 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:03:35,039 - ERROR - ['넥스트에라', '에너지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:03:36,639 - ERROR - 
+1 Failed download:
+2025-11-26 00:03:36,639 - ERROR - ['코인베이스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:03:38,183 - ERROR - 
+1 Failed download:
+2025-11-26 00:03:38,183 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:03:39,127 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:03:39,127 - ERROR - ['골드', '필즈(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:03:39,963 - ERROR - 
+1 Failed download:
+2025-11-26 00:03:39,964 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:03:40,896 - ERROR - 
+1 Failed download:
+2025-11-26 00:03:40,896 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:03:41,653 - ERROR - 
+1 Failed download:
+2025-11-26 00:03:41,654 - ERROR - ['리프트']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:03:42,609 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:03:42,610 - ERROR - ['바이오테크놀로지', '버']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:03:43,401 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:03:43,404 - ERROR - ['홀딩스', '그룹']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:03:43,418 - ERROR - ✗ AGM 그룹 홀딩스: Cannot set a DataFrame with multiple columns to the single column RSI
+2025-11-26 00:03:44,328 - ERROR - 
+3 Failed downloads:
+2025-11-26 00:03:44,329 - ERROR - ['게티', '이미지', '홀딩스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:13:25,027 - ERROR - 
+1 Failed download:
+2025-11-26 00:13:25,027 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:13:26,000 - ERROR - 
+1 Failed download:
+2025-11-26 00:13:26,001 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:13:26,744 - ERROR - 
+1 Failed download:
+2025-11-26 00:13:26,744 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:13:27,757 - ERROR - 
+1 Failed download:
+2025-11-26 00:13:27,760 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:13:30,218 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:13:30,218 - ERROR - ['넥스트에라', '에너지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:13:31,835 - ERROR - 
+1 Failed download:
+2025-11-26 00:13:31,835 - ERROR - ['코인베이스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:13:33,245 - ERROR - 
+1 Failed download:
+2025-11-26 00:13:33,245 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:13:34,157 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:13:34,159 - ERROR - ['필즈(ADR)', '골드']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:13:35,013 - ERROR - 
+1 Failed download:
+2025-11-26 00:13:35,015 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:13:35,931 - ERROR - 
+1 Failed download:
+2025-11-26 00:13:35,932 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:13:36,672 - ERROR - 
+1 Failed download:
+2025-11-26 00:13:36,673 - ERROR - ['리프트']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:13:37,572 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:13:37,572 - ERROR - ['바이오테크놀로지', '버']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:13:38,331 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:13:38,331 - ERROR - ['그룹', '홀딩스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:13:38,334 - ERROR - ✗ AGM 그룹 홀딩스: Cannot set a DataFrame with multiple columns to the single column RSI
+2025-11-26 00:13:39,309 - ERROR - 
+3 Failed downloads:
+2025-11-26 00:13:39,310 - ERROR - ['이미지', '홀딩스', '게티']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:39:56,611 - ERROR - 
+1 Failed download:
+2025-11-26 00:39:56,616 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:39:57,600 - ERROR - 
+1 Failed download:
+2025-11-26 00:39:57,600 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:39:58,346 - ERROR - 
+1 Failed download:
+2025-11-26 00:39:58,346 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:39:59,247 - ERROR - 
+1 Failed download:
+2025-11-26 00:39:59,251 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:40:01,699 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:40:01,699 - ERROR - ['에너지', '넥스트에라']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:40:03,270 - ERROR - 
+1 Failed download:
+2025-11-26 00:40:03,270 - ERROR - ['코인베이스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:40:04,695 - ERROR - 
+1 Failed download:
+2025-11-26 00:40:04,695 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:40:05,610 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:40:05,611 - ERROR - ['필즈(ADR)', '골드']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:40:06,380 - ERROR - 
+1 Failed download:
+2025-11-26 00:40:06,383 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:40:07,310 - ERROR - 
+1 Failed download:
+2025-11-26 00:40:07,310 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:40:08,081 - ERROR - 
+1 Failed download:
+2025-11-26 00:40:08,082 - ERROR - ['리프트']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:40:09,005 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:40:09,005 - ERROR - ['바이오테크놀로지', '버']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:40:09,774 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:40:09,774 - ERROR - ['홀딩스', '그룹']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:40:09,789 - ERROR - ✗ AGM 그룹 홀딩스: Cannot set a DataFrame with multiple columns to the single column RSI
+2025-11-26 00:40:10,731 - ERROR - 
+3 Failed downloads:
+2025-11-26 00:40:10,731 - ERROR - ['홀딩스', '게티', '이미지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:46:24,434 - ERROR - 
+1 Failed download:
+2025-11-26 00:46:24,434 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:46:25,371 - ERROR - 
+1 Failed download:
+2025-11-26 00:46:25,372 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:46:26,361 - ERROR - 
+1 Failed download:
+2025-11-26 00:46:26,361 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:46:27,264 - ERROR - 
+1 Failed download:
+2025-11-26 00:46:27,265 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:46:29,770 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:46:29,770 - ERROR - ['에너지', '넥스트에라']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:46:31,338 - ERROR - 
+1 Failed download:
+2025-11-26 00:46:31,338 - ERROR - ['코인베이스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:46:32,735 - ERROR - 
+1 Failed download:
+2025-11-26 00:46:32,735 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:46:33,653 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:46:33,653 - ERROR - ['필즈(ADR)', '골드']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:46:34,801 - ERROR - 
+1 Failed download:
+2025-11-26 00:46:34,801 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:46:35,727 - ERROR - 
+1 Failed download:
+2025-11-26 00:46:35,727 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:46:36,699 - ERROR - 
+1 Failed download:
+2025-11-26 00:46:36,699 - ERROR - ['리프트']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:46:37,980 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:46:37,980 - ERROR - ['버', '바이오테크놀로지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:46:38,737 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:46:38,737 - ERROR - ['그룹', '홀딩스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:46:38,746 - ERROR - ✗ AGM 그룹 홀딩스: Cannot set a DataFrame with multiple columns to the single column RSI
+2025-11-26 00:46:39,657 - ERROR - 
+3 Failed downloads:
+2025-11-26 00:46:39,657 - ERROR - ['이미지', '게티', '홀딩스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:24,135 - ERROR - 
+1 Failed download:
+2025-11-26 00:52:24,135 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:25,049 - ERROR - 
+1 Failed download:
+2025-11-26 00:52:25,049 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:26,723 - ERROR - 
+1 Failed download:
+2025-11-26 00:52:26,723 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:27,618 - ERROR - 
+1 Failed download:
+2025-11-26 00:52:27,618 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:28,388 - ERROR - 
+1 Failed download:
+2025-11-26 00:52:28,388 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:29,315 - ERROR - 
+1 Failed download:
+2025-11-26 00:52:29,315 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:31,839 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:52:31,839 - ERROR - ['에너지', '넥스트에라']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:33,453 - ERROR - 
+1 Failed download:
+2025-11-26 00:52:33,454 - ERROR - ['코인베이스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:34,917 - ERROR - 
+1 Failed download:
+2025-11-26 00:52:34,917 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:35,808 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:52:35,808 - ERROR - ['골드', '필즈(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:36,563 - ERROR - 
+1 Failed download:
+2025-11-26 00:52:36,565 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:37,486 - ERROR - 
+1 Failed download:
+2025-11-26 00:52:37,486 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:38,262 - ERROR - 
+1 Failed download:
+2025-11-26 00:52:38,263 - ERROR - ['리프트']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:39,178 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:52:39,180 - ERROR - ['바이오테크놀로지', '버']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:40,864 - ERROR - 
+1 Failed download:
+2025-11-26 00:52:40,864 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:41,934 - ERROR - 
+1 Failed download:
+2025-11-26 00:52:41,934 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:42,687 - ERROR - 
+1 Failed download:
+2025-11-26 00:52:42,687 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:43,599 - ERROR - 
+1 Failed download:
+2025-11-26 00:52:43,599 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:46,067 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:52:46,067 - ERROR - ['넥스트에라', '에너지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:47,664 - ERROR - 
+1 Failed download:
+2025-11-26 00:52:47,665 - ERROR - ['코인베이스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:49,048 - ERROR - 
+1 Failed download:
+2025-11-26 00:52:49,048 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:50,048 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:52:50,048 - ERROR - ['골드', '필즈(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:50,804 - ERROR - 
+1 Failed download:
+2025-11-26 00:52:50,804 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:51,705 - ERROR - 
+1 Failed download:
+2025-11-26 00:52:51,705 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:52,561 - ERROR - 
+1 Failed download:
+2025-11-26 00:52:52,561 - ERROR - ['리프트']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:53,446 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:52:53,446 - ERROR - ['버', '바이오테크놀로지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:54,286 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:52:54,286 - ERROR - ['그룹', '홀딩스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:52:54,294 - ERROR - ✗ AGM 그룹 홀딩스: Cannot set a DataFrame with multiple columns to the single column RSI
+2025-11-26 00:52:55,199 - ERROR - 
+3 Failed downloads:
+2025-11-26 00:52:55,200 - ERROR - ['홀딩스', '이미지', '게티']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:58:17,277 - ERROR - 
+1 Failed download:
+2025-11-26 00:58:17,278 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:58:18,238 - ERROR - 
+1 Failed download:
+2025-11-26 00:58:18,239 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:58:19,005 - ERROR - 
+1 Failed download:
+2025-11-26 00:58:19,005 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:58:19,920 - ERROR - 
+1 Failed download:
+2025-11-26 00:58:19,920 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:58:22,447 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:58:22,448 - ERROR - ['넥스트에라', '에너지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:58:24,037 - ERROR - 
+1 Failed download:
+2025-11-26 00:58:24,038 - ERROR - ['코인베이스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:58:25,496 - ERROR - 
+1 Failed download:
+2025-11-26 00:58:25,496 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:58:26,428 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:58:26,428 - ERROR - ['필즈(ADR)', '골드']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:58:27,193 - ERROR - 
+1 Failed download:
+2025-11-26 00:58:27,194 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:58:28,094 - ERROR - 
+1 Failed download:
+2025-11-26 00:58:28,095 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:58:28,871 - ERROR - 
+1 Failed download:
+2025-11-26 00:58:28,871 - ERROR - ['리프트']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:58:29,802 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:58:29,802 - ERROR - ['버', '바이오테크놀로지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:58:30,568 - ERROR - 
+2 Failed downloads:
+2025-11-26 00:58:30,568 - ERROR - ['홀딩스', '그룹']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 00:58:30,578 - ERROR - ✗ AGM 그룹 홀딩스: Cannot set a DataFrame with multiple columns to the single column RSI
+2025-11-26 00:58:31,491 - ERROR - 
+3 Failed downloads:
+2025-11-26 00:58:31,493 - ERROR - ['홀딩스', '이미지', '게티']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 01:10:00,465 - ERROR - 
+1 Failed download:
+2025-11-26 01:10:00,465 - ERROR - ['케이엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 01:10:01,433 - ERROR - 
+1 Failed download:
+2025-11-26 01:10:01,433 - ERROR - ['에코프로비엠']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 01:10:02,193 - ERROR - 
+1 Failed download:
+2025-11-26 01:10:02,193 - ERROR - ['포스코DX']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 01:10:03,115 - ERROR - 
+1 Failed download:
+2025-11-26 01:10:03,115 - ERROR - ['블랙야크아이앤씨']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 01:10:05,726 - ERROR - 
+2 Failed downloads:
+2025-11-26 01:10:05,726 - ERROR - ['에너지', '넥스트에라']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 01:10:07,323 - ERROR - 
+1 Failed download:
+2025-11-26 01:10:07,323 - ERROR - ['코인베이스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 01:10:08,798 - ERROR - 
+1 Failed download:
+2025-11-26 01:10:08,798 - ERROR - ['모더나']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 01:10:10,110 - ERROR - 
+2 Failed downloads:
+2025-11-26 01:10:10,110 - ERROR - ['필즈(ADR)', '골드']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 01:10:10,883 - ERROR - 
+1 Failed download:
+2025-11-26 01:10:10,884 - ERROR - ['바이오엔테크(ADR)']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 01:10:11,802 - ERROR - 
+1 Failed download:
+2025-11-26 01:10:11,802 - ERROR - ['아이온큐']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 01:10:12,571 - ERROR - 
+1 Failed download:
+2025-11-26 01:10:12,571 - ERROR - ['리프트']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 01:10:13,490 - ERROR - 
+2 Failed downloads:
+2025-11-26 01:10:13,492 - ERROR - ['버', '바이오테크놀로지']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 01:10:14,639 - ERROR - 
+2 Failed downloads:
+2025-11-26 01:10:14,639 - ERROR - ['홀딩스', '그룹']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
+2025-11-26 01:10:14,648 - ERROR - ✗ AGM 그룹 홀딩스: Cannot set a DataFrame with multiple columns to the single column RSI
+2025-11-26 01:10:15,570 - ERROR - 
+3 Failed downloads:
+2025-11-26 01:10:15,570 - ERROR - ['이미지', '게티', '홀딩스']: YFPricesMissingError('possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")')
